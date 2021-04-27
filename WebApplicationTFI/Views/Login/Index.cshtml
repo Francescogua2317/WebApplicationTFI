@@ -31,16 +31,16 @@
                 <center>
                     <img src="~/Images/user.png" />
                 </center>
-                
-                    <select asp-for="DropLogin" required="required" class="form-control" id="DropLogin" name="DropLogin">
-                        <option value="Iscritto">Iscritto</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Azienda">Azienda</option>
-                        <option value="Amministrativo">Amministrativo</option>
-                    </select>
-                
-
-                <h3 class="login-box-msg" style="color:white">Accedi</h3>
+                <hr style="border:3px solid black;width:auto" />
+                <h3 class="login-box-msg" style="color:white;padding:0">Accedi</h3>
+                <hr style="border:3px solid black" />
+                <select asp-for="DropLogin" required="required" class="form-control" id="DropLogin" name="DropLogin">
+                    <option value="Iscritto">Iscritto</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Azienda">Azienda</option>
+                    <option value="Amministrativo">Amministrativo</option>
+                </select>
+                <br />
                 <form action="../../index3.html" method="post">
                     <div class="input-group mb-3">
                         <input type="text" asp-for="CF" class="form-control" id="CF" placeholder="Codice Fiscale">
@@ -58,6 +58,7 @@
                             </div>
                         </div>
                     </div>
+                    <hr style="border:3px solid black" />
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-dark">
