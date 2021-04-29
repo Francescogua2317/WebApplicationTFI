@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="ResMimeType">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="Version">
+        <value>1.0.0.0</value>
+    </resheader>
+    <resheader name="Reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="Writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="mancautentelogin">
+        <value>Inserire codice utente!</value>
+    </data>
+    <data name="mancapasswordlogin">
+        <value>Inserire password!</value>
+    </data>
+    <data name="utentenontrovato">
+        <value>Impossibile autenticare! Utente o password errati.</value>
+    </data>
+    <data name="utentenonattivato">
+        <value>Impossibile autenticare! Utente ancora non attivato!</value>
+    </data>
+    <data name="utentenoninattesadiattivazione">
+        <value>Impossibile autenticare! Utente in attesa di attivazione!</value>
+    </data>
+    <data name="utentepasswordscaduta">
+        <value>Impossibile autenticare! Password scaduta. Inserire nuova password.</value>
+    </data>
+    <data name="utentepasswordprivacyscaduta">
+        <value>Il periodo di validità della password è scaduto! Inserire una nuova password.</value>
+    </data>
+    <data name="mancaconfermapassword">
+        <value>Confermare la password inserita!</value>
+    </data>
+    <data name="passworddiverse">
+        <value>Verificare le password inserite!</value>
+    </data>
+    <data name="utentenonautorizzato">
+        <value>Impossibile autenticare! Utente non autorizzato per accedere a questa funzione!</value>
+    </data>
+    <data name="funzioninonassegnate">
+        <value>Impossibile autenticare! Per questo utente non è stata assegnata nessuna funzione!</value>
+    </data>
+    <data name="lunghezzapassword">
+        <value>La password deve essere lunga tra 5 e 8 caratteri!</value>
+    </data>
+    <data name="aziendechiuse">
+        <value>Impossibile autenticare! Utente non in possesso di deleghe valide!</value>
+    </data>
+    <data name="utenteprimoaccesso">
+        <value>E\' la prima volta che si accede al sistema. Inserire una nuova password.</value>
+    </data>
+    <data name="utentedisabilitato">
+        <value>Impossibile autenticare! L\'accesso per questo utente e\' stato disabilitato.</value>
+    </data>
+</root>

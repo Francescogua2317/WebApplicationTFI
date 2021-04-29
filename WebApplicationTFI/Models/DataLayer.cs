@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using IBM.Data.DB2.iSeries;
 
-namespace WebAppTFI.Models
+namespace WebApplicationTFI.Models
 {
     public class DataLayer
     {
