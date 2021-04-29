@@ -35,11 +35,12 @@
                 <h3 class="login-box-msg" style="color:white;padding:0">Accedi</h3>
                 <hr style="border: 3px solid grey;background:grey" />
                 <select asp-for="DropLogin" required="required" class="form-control" id="DropLogin" name="DropLogin">
-                    <option name="AD" selected value="AD">Admin</option>
-                    <option name="E" selected value="E">Amministrativo</option>
-                    <option name="A" selected value="A">Azienda</option>
-                    <option name="C" selected value="C">Consulente</option>
-                    <option name="I" selected value="I">Iscritto</option>
+                    <option selected>--Seleziona--</option>
+                    <option name="AD" value="AD">Admin</option>
+                    <option name="E" value="E">Amministrativo</option>
+                    <option name="A" value="A">Azienda</option>
+                    <option name="C" value="C">Consulente</option>
+                    <option name="I" value="I">Iscritto</option>
                 </select>
                 <br />
                 <form id="form_login" method="post">

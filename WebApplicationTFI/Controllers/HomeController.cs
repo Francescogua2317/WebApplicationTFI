@@ -12,10 +12,6 @@ namespace WebApplicationTFI.Controllers
         {
             return View();
         }
-        public ActionResult Index2()
-        {
-            return View();
-        }
 
         public ActionResult About()
         {
@@ -26,9 +22,7 @@ namespace WebApplicationTFI.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+           return View();
         }
     }
 }
