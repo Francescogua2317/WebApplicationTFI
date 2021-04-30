@@ -31,7 +31,7 @@ namespace WebApplicationTFI.Controllers
 
             if (u.LoginUtente(login, pwd))
             {
-                if(selected=="I")
+                if(selected == "I")
                 { 
                 Session["utente"] = u;
 
@@ -43,7 +43,7 @@ namespace WebApplicationTFI.Controllers
 
                 return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
                 }
-                if (selected == "A" || selected=="C")
+                if (selected == "A" || selected == "C")
                 {
                     Session["utente"] = u;
 
