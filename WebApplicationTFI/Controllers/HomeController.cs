@@ -10,6 +10,7 @@ namespace WebApplicationTFI.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
