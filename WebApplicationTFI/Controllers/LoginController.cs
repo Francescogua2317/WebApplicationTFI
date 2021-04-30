@@ -31,25 +31,26 @@ namespace WebApplicationTFI.Controllers
 
             if (u.LoginUtente(login, pwd))
             {
-                if(selected == "I")
+                if(selected.EndsWith("I"))
                 { 
                 Session["utente"] = u;
 
                return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_IscrittoLayout.cshtml");
                 }
-                if (selected == "E")
+                if (selected.EndsWith("E"))
                 {
                     Session["utente"] = u;
 
                 return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
                 }
+                if (selected.EndsWith("A") || selected.EndsWith("C"))
                 if (selected == "A" || selected == "C")
                 {
                     Session["utente"] = u;
 
                     return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AziendaConsulenteLayout.cshtml");
                 }
-                if (selected == "AD")
+                if (selected.EndsWith("AD"))
                 {
                     Session["utente"] = u;
 
