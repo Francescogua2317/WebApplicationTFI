@@ -43,7 +43,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href='@Url.Action("Index", "Home")' class="nav-link primary">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href='@Url.Action("Contact", "Home")' class="nav-link primary">Contatti</a>
@@ -290,6 +290,14 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-ambulance"></i>
                                 <p>INFORTUNI</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='@Url.Action("Index", "Login")' class="nav-link primary">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                LOGOUT
+                               
                             </a>
                         </li>
                     </ul>
