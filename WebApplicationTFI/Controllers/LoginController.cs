@@ -26,22 +26,32 @@ namespace WebApplicationTFI.Controllers
         [HttpPost]
         public ActionResult Index(Utente u)
         {
-            string selected = Request.Form["idLogin"];
+            string selected = Request.Form["DropLogin"];
             string login = Request.Form["Login"];
             string pwd = Request.Form["Password"];
 
-            if (u.LoginUtente(login, pwd))
-            {
+            //if (u.LoginUtente(login, pwd, selected))
+            //{
+/*
+A   = Azienda
+C   = Consulente
+E   = Enpaia
+I   = Iscritto
+P   = 
+S   = 
+*/
                 if (selected.EndsWith("I"))
                 {
-                    Session["utente"] = u;
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                    //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_IscrittoLayout.cshtml";
 
                     return View("~/Views/Home/Index.cshtml");
                 }
                 if (selected.EndsWith("E"))
                 {
-                    Session["utente"] = u;
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente AMMINISTRATIVO";
+                    //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_AmministrativoLayout.cshtml";
 
                     return View("~/Views/Home/Index.cshtml");
@@ -49,34 +59,36 @@ namespace WebApplicationTFI.Controllers
                 if (selected.EndsWith("A") || selected.EndsWith("C"))
                     if (selected == "A" || selected == "C")
                     {
-                        Session["utente"] = u;
+                        Session["NomeUtente"] = ViewBag.NomeUtente = selected == "A" ? "Utente AZIENDA" : "utente CONSULENTE";
+                        //Session["utente"] = u;
                         Session["layout"] = "~/Views/Shared/_AziendaConsulenteLayout.cshtml";
                         return View("~/Views/Home/Index.cshtml");
                     }
                 if (selected.EndsWith("AD"))
                 {
-                    Session["utente"] = u;
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ADMIN";
+                //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_AdminLayout.cshtml";
                     return View("~/Views/Home/Index.cshtml");
                 }
                 return View();
-            }
-            else
-            {
-                if (u.ErroreConnessione)
-                {
-                    ViewBag.Visibility = true;
+            //}
+            //else
+            //{
+            //    if (u.ErroreConnessione)
+            //    {
+            //        ViewBag.Visibility = true;
 
-                    ViewBag.ErrorMessage = "Attenzione! Si è verificato un problema durante la connessione.";
-                }
-                else
-                {
-                    ViewBag.Visibility = true;
-                    ViewBag.ErrorMessage = "Utente o password errati.";
-                }
-                return View();
+            //        ViewBag.ErrorMessage = "Attenzione! Si è verificato un problema durante la connessione.";
+            //    }
+            //    else
+            //    {
+            //        ViewBag.Visibility = true;
+            //        ViewBag.ErrorMessage = "Utente o password errati.";
+            //    }
+            //    return View();
 
-            }
+            //}
         }
         public void ShowAlert(System.Web.UI.Page senderPage, string strMsg, bool blnShowAtStartup, bool blnRedirect = false, string strUrlRedirect = "")
         {

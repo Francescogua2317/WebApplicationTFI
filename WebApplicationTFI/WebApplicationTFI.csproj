@@ -2221,6 +2221,7 @@
     <Content Include="Views\Shared\_AmministrativoLayout.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\_AziendaConsulenteLayout.cshtml" />
+    <Content Include="Views\Home\Anagrafica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

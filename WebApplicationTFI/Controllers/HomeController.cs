@@ -10,12 +10,13 @@ namespace WebApplicationTFI.Controllers
     {
         public ActionResult Index()
         {
-            
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
 
         public ActionResult About()
         {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -23,7 +24,15 @@ namespace WebApplicationTFI.Controllers
 
         public ActionResult Contact()
         {
-           return View();
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult Anagrafica()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
+
+            return View();
         }
     }
 }
