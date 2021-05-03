@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Enpaia | Dashboard</title>
+    <title>Enpaia</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+    <script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -43,8 +44,12 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
+<<<<<<< HEAD
                     <a href="/" class="nav-link">Home</a>
                   
+=======
+                    <a href='@Url.Action("Index", "Home")' class="nav-link primary">Home</a>
+>>>>>>> 2a539789dfa20b8ce3e4457894b9822183df38df
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href='@Url.Action("Contact", "Home")' class="nav-link primary">Contatti</a>
@@ -148,11 +153,6 @@
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 richieste di amicizia
-                            <span class="float-right text-muted text-sm">12 ore</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
                             <i class="fas fa-file mr-2"></i> 3 nuove notifiche
                             <span class="float-right text-muted text-sm">2 giorni</span>
                         </a>
@@ -184,7 +184,7 @@
                         <img src="~/Images/user.png" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
-                        <a href="#" name="Utente" class="d-block">Giacomino Panevino</a>
+                        <a href="#" name="Utente" class="d-block">@ViewBag.NomeUtente</a>
                     </div>
                 </div>
 
@@ -196,7 +196,7 @@
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("Anagrafica", "Home")" class="nav-link">
                                 <i class="nav-icon fas fa-id-badge"></i>
                                 <p>Anagrafica</p>
                             </a>
@@ -293,6 +293,9 @@
                                 <p>INFORTUNI</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href='@Url.Action("Index", "Login")' class="nav-link primary"><i class="nav-icon fas fa-sign-out-alt"></i>LOGOUT</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -307,14 +310,8 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                         
                         </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
-                        </div><!-- /.col -->
+                        <div class="col-sm-6"></div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>

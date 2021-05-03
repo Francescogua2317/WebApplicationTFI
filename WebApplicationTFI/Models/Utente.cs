@@ -33,16 +33,30 @@ namespace WebApplicationTFI.Models
         public int IdPosizione { get { return _IdPos; } }
         public string Posizione { get { return _posizione; } }
         public string ConsorzioOfConsulente { get { return _consorzioOfConsulente; } }
-        public bool LoginUtente(string login, string pwd)
+        public bool LoginUtente(string login, string pwd, string tipo)
         {
             try
             {
-                string strSQL;
+                string strSQL = "";
                 DataLayer dl = new DataLayer();
                 DataSet Ds = new DataSet();
                 string err = "";
-                
-                Ds = dl.GetDataSet(" SELECT id, login, codpin, tipopin, Stato FROM tbint001 WHERE login ='" + login + "' AND codpin='" + pwd + "'", ref err);
+                switch (tipo)
+                {
+                    case "A":
+                    case "C":
+                        strSQL = " SELECT id, login, codpin, tipopin, Stato FROM tbint001 WHERE login ='" + login + "' AND codpin='" + pwd + "'";
+                        break;
+                    case "I":
+                    case "E":
+                        strSQL = "  SELECT CODUTE, DENUTE, CODTIPUTE, ULTAGG, UTEAGG, OLDCODUTE, IDLOGIN, EMAIL, CODFIS, UTEWINDOWS, USER_FAX, NUMFAXOUT, FLGINAZ, PININAZ, CODTIPUTE2 ";
+                        strSQL += " FROM UTENTI ";
+                        strSQL += " WHERE (UTENTI.CODTIPUTE = '" + tipo + "') AND CODUTE ='" + login + "' AND codpin='" + pwd + "'";
+                        break;
+                    default:
+                        break;
+                }
+                Ds = dl.GetDataSet(strSQL, ref err);
                 if (err != "")
                 {
                     this._errConn = true;
@@ -57,38 +71,46 @@ namespace WebApplicationTFI.Models
                 {
                     if (queryOk(Ds))
                     {
-                        if (Ds.Tables[0].Rows[0]["stato"].ToString().ToUpper() == "V")
+                        //Utente di tipo Azienda e Consulente
+                        if (tipo == "A" || tipo == "C")
                         {
-                            this._loggato = true;
-                            this._id = int.Parse(Ds.Tables[0].Rows[0]["ID"].ToString());
-                            this._userName = Ds.Tables[0].Rows[0]["login"].ToString();
-                            this._pwd = Ds.Tables[0].Rows[0]["codpin"].ToString();
-                            this._tipoPin = Ds.Tables[0].Rows[0]["tipopin"].ToString();
-                            this._stato = Ds.Tables[0].Rows[0]["stato"].ToString();
-
-                            if (_tipoPin == "A")
+                            if (Ds.Tables[0].Rows[0]["stato"].ToString().ToUpper() == "V")
                             {
-                                strSQL = "SELECT rtrim(ltrim(bon_rag_soc)) || ' ' || rtrim(ltrim(bon_rag_soc_sin)) AS RagSociale ";
-                                strSQL += "FROM tbCon WHERE bon_pos=" + this._userName;
-                                DataSet DS2 = new DataSet();
-                                DS2 = dl.GetDataSet(strSQL, ref err);
-
                                 this._loggato = true;
-                                this._IdPos = int.Parse(Ds.Tables[0].Rows[0]["login"].ToString());
-                                this._posizione = DS2.Tables[0].Rows[0]["RagSociale"].ToString();
+                                this._id = int.Parse(Ds.Tables[0].Rows[0]["ID"].ToString());
+                                this._userName = Ds.Tables[0].Rows[0]["login"].ToString();
+                                this._pwd = Ds.Tables[0].Rows[0]["codpin"].ToString();
+                                this._tipoPin = Ds.Tables[0].Rows[0]["tipopin"].ToString();
+                                this._stato = Ds.Tables[0].Rows[0]["stato"].ToString();
 
-                                strSQL = "SELECT id_Tbint001 FROM tbInt001a WHERE codposiz=" + _IdPos + " AND Stato='V'";
-                                DS2 = dl.GetDataSet(strSQL, ref err);
-                                if (queryOk(DS2))
+                                if (_tipoPin == "A")
                                 {
-                                    this._consorzioOfConsulente = DS2.Tables[0].Rows[0]["id_Tbint001"].ToString();
+                                    strSQL = "SELECT rtrim(ltrim(bon_rag_soc)) || ' ' || rtrim(ltrim(bon_rag_soc_sin)) AS RagSociale ";
+                                    strSQL += "FROM tbCon WHERE bon_pos=" + this._userName;
+                                    DataSet DS2 = new DataSet();
+                                    DS2 = dl.GetDataSet(strSQL, ref err);
+
+                                    this._loggato = true;
+                                    this._IdPos = int.Parse(Ds.Tables[0].Rows[0]["login"].ToString());
+                                    this._posizione = DS2.Tables[0].Rows[0]["RagSociale"].ToString();
+
+                                    strSQL = "SELECT id_Tbint001 FROM tbInt001a WHERE codposiz=" + _IdPos + " AND Stato='V'";
+                                    DS2 = dl.GetDataSet(strSQL, ref err);
+                                    if (queryOk(DS2))
+                                    {
+                                        this._consorzioOfConsulente = DS2.Tables[0].Rows[0]["id_Tbint001"].ToString();
+                                    }
                                 }
                             }
+                            else
+                            {
+                                _loggato = false;
+                                return false;
+                            }
                         }
-                        else
+                        else if(tipo == "I" || tipo == "E")
                         {
-                            _loggato = false;
-                            return false;
+
                         }
                     }
                 }

@@ -10,6 +10,7 @@ using WebApplicationTFI.Utilities;
 
 namespace WebApplicationTFI.Controllers
 {
+
     public class LoginController : Controller
     {
         DataLayer objDataAccess;
@@ -18,62 +19,76 @@ namespace WebApplicationTFI.Controllers
         // GET: Login
         public ActionResult Index()
         {
-     
+
             return View();
 
         }
         [HttpPost]
         public ActionResult Index(Utente u)
         {
-            string selected = Request.Form["idLogin"];
+            string selected = Request.Form["DropLogin"];
             string login = Request.Form["Login"];
             string pwd = Request.Form["Password"];
 
-            if (u.LoginUtente(login, pwd))
-            {
-                if(selected.EndsWith("I"))
-                { 
-                Session["utente"] = u;
+            //if (u.LoginUtente(login, pwd, selected))
+            //{
+/*
+A   = Azienda
+C   = Consulente
+E   = Enpaia
+I   = Iscritto
+P   = 
+S   = 
+*/
+                if (selected.EndsWith("I"))
+                {
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                    //Session["utente"] = u;
+                    Session["layout"] = "~/Views/Shared/_IscrittoLayout.cshtml";
 
-               return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_IscrittoLayout.cshtml");
+                    return View("~/Views/Home/Index.cshtml");
                 }
                 if (selected.EndsWith("E"))
                 {
-                    Session["utente"] = u;
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente AMMINISTRATIVO";
+                    //Session["utente"] = u;
+                    Session["layout"] = "~/Views/Shared/_AmministrativoLayout.cshtml";
 
-                return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
+                    return View("~/Views/Home/Index.cshtml");
                 }
                 if (selected.EndsWith("A") || selected.EndsWith("C"))
-                if (selected == "A" || selected == "C")
-                {
-                    Session["utente"] = u;
-
-                    return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AziendaConsulenteLayout.cshtml");
-                }
+                    if (selected == "A" || selected == "C")
+                    {
+                        Session["NomeUtente"] = ViewBag.NomeUtente = selected == "A" ? "Utente AZIENDA" : "utente CONSULENTE";
+                        //Session["utente"] = u;
+                        Session["layout"] = "~/Views/Shared/_AziendaConsulenteLayout.cshtml";
+                        return View("~/Views/Home/Index.cshtml");
+                    }
                 if (selected.EndsWith("AD"))
                 {
-                    Session["utente"] = u;
-
-                    return View("~/Views/Home/Index.cshtml", "~/Views/Shared/_AdminLayout.cshtml");
+                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ADMIN";
+                //Session["utente"] = u;
+                    Session["layout"] = "~/Views/Shared/_AdminLayout.cshtml";
+                    return View("~/Views/Home/Index.cshtml");
                 }
                 return View();
-            }
-            else
-            {
-               if (u.ErroreConnessione)
-                {
-                   ViewBag.Visibility = true;
+            //}
+            //else
+            //{
+            //    if (u.ErroreConnessione)
+            //    {
+            //        ViewBag.Visibility = true;
 
-                    ViewBag.ErrorMessage = "Attenzione! Si è verificato un problema durante la connessione.";
-               }
-               else
-                {
-                   ViewBag.Visibility = true;
-                    ViewBag.ErrorMessage = "Utente o password errati.";
-                }
-                return View();
+            //        ViewBag.ErrorMessage = "Attenzione! Si è verificato un problema durante la connessione.";
+            //    }
+            //    else
+            //    {
+            //        ViewBag.Visibility = true;
+            //        ViewBag.ErrorMessage = "Utente o password errati.";
+            //    }
+            //    return View();
 
-            }
+            //}
         }
         public void ShowAlert(System.Web.UI.Page senderPage, string strMsg, bool blnShowAtStartup, bool blnRedirect = false, string strUrlRedirect = "")
         {
@@ -158,7 +173,7 @@ namespace WebApplicationTFI.Controllers
                                 {
                                     strSQL = "SELECT COUNT(*) FROM UTEPIN WHERE STAPIN = 'A' AND DATINI = (SELECT MAX(DATINI) FROM UTEPIN WHERE";
                                     strSQL += " CODUTE = " + DoublePeakForSql(Convert.ToString("" + objDtUte.Rows[KK]["CODUTE"]).Trim());
-                                   strSQL += " AND STAPIN = 'A') AND PIN = " + DoublePeakForSql(Cypher.CryptPassword(strPassword).Trim());
+                                    strSQL += " AND STAPIN = 'A') AND PIN = " + DoublePeakForSql(Cypher.CryptPassword(strPassword).Trim());
                                     strSQL += " AND CODUTE = " + DoublePeakForSql(Convert.ToString("" + objDtUte.Rows[KK]["CODUTE"]).Trim());
 
                                     if (Convert.ToInt16("0" + objDataAccess.Get1ValueFromSQL(strSQL, CommandType.Text)) > 0)
@@ -211,8 +226,8 @@ namespace WebApplicationTFI.Controllers
 
                     if (objDt.Rows.Count > 0)
                     {
-                    //    if (strPassword.ToUpper() == Cypher.DeCryptPassword(Convert.ToString("" + objDt.Rows[KK]["PIN"]).Trim()).ToUpper())
-                            blnResult = true;
+                        //    if (strPassword.ToUpper() == Cypher.DeCryptPassword(Convert.ToString("" + objDt.Rows[KK]["PIN"]).Trim()).ToUpper())
+                        blnResult = true;
                     }
                 }
                 else if (strUser == null == false)
@@ -440,24 +455,24 @@ namespace WebApplicationTFI.Controllers
                                             strSQL = "UPDATE UTEACC SET USCITA = ENTRATA + " + Session.Timeout.ToString() + " minutes WHERE CODUTE = '";
                                             strSQL += Session["strCodUte"].ToString() + "' AND ENTRATA <= (current_timestamp - " + Session.Timeout.ToString();
                                             strSQL += " minutes) AND USCITA IS NULL AND date(ENTRATA) = current_date AND UTEWEB = 'S'";
-                                        //    blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
+                                            //    blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
                                             // Inseriamo un record in UTEACC
                                             // -----------------------------
                                             if (blnCommit == true)
                                             {
                                                 strSQL = "INSERT INTO UTEACC (CODUTE, ENTRATA, USCITA, PCNAME, UTEWEB) VALUES ('";
-                                            //    strSQL += Session["strCodUte"] + "', '" + objDataAccess.strTimeStamp + "', Null, '";
-                                                    strSQL += Session["strCodUte"] + "', '" + DateTime.Now.ToString() + "', Null, '";
-                                                    strSQL += Request.ServerVariables["REMOTE_ADDR"] + "', 'S')";
-                                          //      blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
+                                                //    strSQL += Session["strCodUte"] + "', '" + objDataAccess.strTimeStamp + "', Null, '";
+                                                strSQL += Session["strCodUte"] + "', '" + DateTime.Now.ToString() + "', Null, '";
+                                                strSQL += Request.ServerVariables["REMOTE_ADDR"] + "', 'S')";
+                                                //      blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
                                             }
                                             objDataAccess.EndTransaction(blnCommit);
                                             blnTran = false;
-                                        //    Session["LoginTime"] = objDataAccess.strTimeStamp;
-                                                Session["LoginTime"] = DateTime.Now;
+                                            //    Session["LoginTime"] = objDataAccess.strTimeStamp;
+                                            Session["LoginTime"] = DateTime.Now;
 
-                                            }
                                         }
+                                    }
                                     else
                                         // If Date.Compare(DateAdd(DateInterval.Day, 90, datDataIni), Today) >= 0 Then
                                         if (DateTime.Compare(datDataFin, DateTime.Today) >= 0)
@@ -473,7 +488,7 @@ namespace WebApplicationTFI.Controllers
                                         strSQL = "UPDATE UTEACC SET USCITA = ENTRATA + " + Session.Timeout.ToString() + " minutes WHERE CODUTE = '";
                                         strSQL += Session["strCodUte"].ToString() + "' AND ENTRATA <= (current_timestamp - " + Session.Timeout.ToString();
                                         strSQL += " minutes) AND USCITA IS NULL AND date(ENTRATA) = current_date AND UTEWEB = 'S'";
-                                     //   blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
+                                        //   blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
                                         // Inseriamo un record in UTEACC
                                         // -----------------------------
                                         if (blnCommit == true)
@@ -481,7 +496,7 @@ namespace WebApplicationTFI.Controllers
                                             strSQL = "INSERT INTO UTEACC (CODUTE, ENTRATA, USCITA, PCNAME, UTEWEB) VALUES ('";
                                             strSQL += Session["strCodUte"] + "', '" + DateTime.Now.ToString() + "', Null, '";
                                             strSQL += Request.ServerVariables["REMOTE_ADDR"].ToString() + "', 'S')";
-                                       //     blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
+                                            //     blnCommit = objDataAccess.WriteTransactionData(strSQL, CommandType.Text);
                                         }
                                         objDataAccess.EndTransaction(blnCommit);
                                         blnTran = false;
@@ -491,7 +506,7 @@ namespace WebApplicationTFI.Controllers
                                     {
                                         // Cambio password
                                         // ---------------
-                                     //   base.ShowAlert(this, this.MyResourceManager.GetString("utentepasswordprivacyscaduta"), true);
+                                        //   base.ShowAlert(this, this.MyResourceManager.GetString("utentepasswordprivacyscaduta"), true);
                                         //ShowConfermaPassword(true);
                                     }
                                 }
@@ -499,7 +514,7 @@ namespace WebApplicationTFI.Controllers
                                 {
                                     // Cambio password
                                     // ---------------
-                                 //   base.ShowAlert(this, this.MyResourceManager.GetString("utentepasswordprivacyscaduta"), true);
+                                    //   base.ShowAlert(this, this.MyResourceManager.GetString("utentepasswordprivacyscaduta"), true);
                                     //ShowConfermaPassword(true);
                                 }
                             }
@@ -511,7 +526,7 @@ namespace WebApplicationTFI.Controllers
                         }
                     }
                     else
-                    {               
+                    {
                         //    base.ShowAlert(this, this.MyResourceManager.GetString("aziendechiuse"), true);
                     }
                 }
@@ -529,8 +544,8 @@ namespace WebApplicationTFI.Controllers
                     else
                         // Nome utente o password non validi  
                         // ---------------------------------
-                    //    base.ShowAlert(this, this.MyResourceManager.GetString("utentenontrovato"), true);
-                    blnResult = false;
+                        //    base.ShowAlert(this, this.MyResourceManager.GetString("utentenontrovato"), true);
+                        blnResult = false;
                 }
                 //if (blnResult == true) Reset_Form(true);
             }
@@ -546,7 +561,7 @@ namespace WebApplicationTFI.Controllers
                 {
                     if (blnTran == true)
                         objDataAccess.EndTransaction(false);
-                //    objDataAccess.Dispose();
+                    //    objDataAccess.Dispose();
                 }
                 //base.ErrorHandler();
             }

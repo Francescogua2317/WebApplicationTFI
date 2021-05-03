@@ -43,7 +43,11 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
+<<<<<<< HEAD
                     <a href="javascript:void(0);" onclick="history.forward();" class="nav-link">Home</a>
+=======
+                    <a href='@Url.Action("Index", "Home")' class="nav-link primary">Home</a>
+>>>>>>> 2a539789dfa20b8ce3e4457894b9822183df38df
                 </li>
             </ul>
 
@@ -180,7 +184,7 @@
                         <img src="~/Images/user.png" class="img-circle elevation-2" alt="Admin Image"/>
                     </div>
                     <div class="info">
-                        <a href="#" name="Utente" class="d-block">Giacomino Panevino</a>
+                        <a href="#" name="Utente" class="d-block">@ViewBag.NomeUtente</a>
                     </div>
                 </div>
 
@@ -378,81 +382,81 @@
                                                 <p>Invalidità</p>
                                             </a>
                                         </li>
-                                        </ul>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-search-plus"></i>
-                                                <p>
-                                                    Ricerche
-                                                    <i class="fas fa-angle-left right"></i>
-                                                </p>
-                                            </a>
-                                            <ul class="nav nav-treeview">
+                                    </ul>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-search-plus"></i>
+                                        <p>
+                                            Ricerche
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
 
-                                                <li class="nav-item">
-                                                    <a href="" class="nav-link">
-                                                        <i class="fas fa-id-card-alt nav-icon"></i>
-                                                        <p>CU</p>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="" class="nav-link">
-                                                        <i class="fas fa-money-check-alt nav-icon"></i>
-                                                        <p>Prospetti pagamento</p>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="" class="nav-link">
-                                                        <i class="nav-icon fas fa-credit-card"></i>
-                                                        <p>Estratti conto</p>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="" class="nav-link">
-                                                        <i class="nav-icon fas fa-book"></i>
-                                                        <p>Storico elenchi di pagamento</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-paste"></i>
-                                                <p>Lista liquidazioni</p>
+                                            <a href="" class="nav-link">
+                                                <i class="fas fa-id-card-alt nav-icon"></i>
+                                                <p>CU</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                                <p>Lista di pagamento</p>
+                                            <a href="" class="nav-link">
+                                                <i class="fas fa-money-check-alt nav-icon"></i>
+                                                <p>Prospetti pagamento</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                                <p>Elenco di pagamento</p>
+                                            <a href="" class="nav-link">
+                                                <i class="nav-icon fas fa-credit-card"></i>
+                                                <p>Estratti conto</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-user-edit"></i>
-                                                <p>Prescritti</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-comment-slash"></i>
-                                                <p>Silenti</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="nav-icon fas fa-coins"></i>
-                                                <p>Simulazione liquidazione VIRTUALE</p>
+                                            <a href="" class="nav-link">
+                                                <i class="nav-icon fas fa-book"></i>
+                                                <p>Storico elenchi di pagamento</p>
                                             </a>
                                         </li>
                                     </ul>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-paste"></i>
+                                        <p>Lista liquidazioni</p>
+                                    </a>
                                 </li>
-                            
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                                        <p>Lista di pagamento</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-clipboard-list"></i>
+                                        <p>Elenco di pagamento</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-user-edit"></i>
+                                        <p>Prescritti</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-comment-slash"></i>
+                                        <p>Silenti</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-coins"></i>
+                                        <p>Simulazione liquidazione VIRTUALE</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-credit-card"></i>
@@ -481,6 +485,14 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-ambulance"></i>
                                 <p>INFORTUNI</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='@Url.Action("Index", "Login")' class="nav-link primary">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                LOGOUT
+
                             </a>
                         </li>
 </nav>
