@@ -203,35 +203,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="@Url.Action("Scadenzario", "Home")" class="nav-link">
                                         <i class="nav-icon fas fa-calendar-times"></i>
                                         <p>
                                             Scadenzario
-                                            <i class="fas fa-angle-left right"></i>
                                         </p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-file-alt nav-icon"></i>
-                                                <p>Ordinari</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="nav-icon fas fa-euro-sign"></i>
-                                                <p>Anticipazioni</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-plus-circle nav-icon"></i>
-                                                <p>Suppletive</p>
-                                            </a>
-                                        </li>
-
-                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
@@ -346,42 +323,8 @@
                                         <i class="nav-icon fas fa-calendar-times"></i>
                                         <p>
                                             Scadenzario
-                                            <i class="fas fa-angle-left right"></i>
                                         </p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-
-                                        <li class="nav-item">
-                                            <a href="" title="(Anche per decesso CI)" class="nav-link">
-                                                <i class="fas fa-file-alt nav-icon"></i>
-                                                <p>Ordinari</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="nav-icon fas fa-euro-sign"></i>
-                                                <p>Anticipazioni</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-plus-circle nav-icon"></i>
-                                                <p>Suppletive</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-file-medical nav-icon"></i>
-                                                <p>Assegni di morte</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" title="(Verificare canali di comunicazione con l'iscritto)" class="nav-link">
-                                                <i class="fab fa-accessible-icon nav-icon"></i>
-                                                <p>Invalidità</p>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-search-plus"></i>
@@ -490,7 +433,7 @@
 
                             <a href='@Url.Action("Index", "Login")' class="nav-link primary">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
-                                LOGOUT
+                                <p>LOGOUT</p>
 
                             </a>
                         </li>
