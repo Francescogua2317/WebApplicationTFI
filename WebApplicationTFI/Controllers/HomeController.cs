@@ -34,5 +34,11 @@ namespace WebApplicationTFI.Controllers
 
             return View();
         }
+
+        public ActionResult EstrattoConto()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
     }
 }
