@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "ScadenzarioFondo";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
+}
+
+<div class="dropdown">
+    <center>
+        <select style="text-align:center;width:200px;" asp-for="DDLScadenzario" required="required" class="dropdown-toggle btn btn-success" id="DDLScadenzario" name="DDLScadenzario">
+            <option selected>--Seleziona--</option>
+            <option name="O" value="O">Ordinario</option>
+            <option name="A" value="A">Anticipazioni</option>
+            <option name="S" value="S">Suppletive</option>
+            <option name="As" value="=As">Assegni di Morte</option>
+            <option name="I" value="I">Invalidità</option>
+        </select>
+    </center>
+</div>
+<br />
+<br />
+<div class="card">
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Matricola</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nominativo</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Inizio</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Cessazione</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Tipo</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Motivo Cessazione</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Carta Enpaia</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato PAEV</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Fondo Pagato</th>
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                <tr>
+                    <td>1234</td>
+                    <td>Franco Luigi</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>Suppletive</td>
+                    <td>Estinzione</td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>1234</td>
+                    <td>Giacomino Panevino</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>Ordinario</td>
+                    <td>Estinzione</td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>1234</td>
+                    <td>Cosimo D'Avena</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>Anticipazioni</td>
+                    <td>Estinzione</td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
