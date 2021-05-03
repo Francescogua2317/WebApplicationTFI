@@ -46,5 +46,15 @@ namespace WebApplicationTFI.Controllers
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
+
+        public ActionResult ListaRAL()
+        {
+            return View();
+        }
+
+        public ActionResult ListaAnnuali()
+        {
+            return View();
+        }
     }
 }

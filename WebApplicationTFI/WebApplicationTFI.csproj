@@ -2226,6 +2226,8 @@
     <Content Include="Views\Home\Anagrafica.cshtml" />
     <Content Include="Views\Home\EstrattoConto.cshtml" />
     <Content Include="Views\Home\Scadenzario.cshtml" />
+    <Content Include="Views\Home\ListaRAL.cshtml" />
+    <Content Include="Views\Home\ListaAnnuali.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
