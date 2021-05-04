@@ -1,0 +1,522 @@
+﻿
+@{
+    ViewBag.Title = "Liquidazione";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
+}
+
+<h2 style="text-align:center">Liquidazione</h2>
+
+<div class="card" id="divRDL">
+    <div class="card-body">
+        <h3 style="text-align:center">Lista RDL</h3>
+        <table id="tblRDL" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">ID</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nome Azienda</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Inizio</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Cessazione</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Totale stipendi</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Lista annuali</th>
+
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                <tr>
+                    <td>1</td>
+                    <td>Enpaia</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>10.000€</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
+                            Visualizza Lista Annuali
+                        </button>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Enpaia</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>50.000€</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
+                            Visualizza Lista Annuali
+                        </button>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Enpaia</td>
+                    <td>03/05/2016</td>
+                    <td>03/05/2017</td>
+                    <td>25.000€</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
+                            Visualizza Lista Annuali
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Lista Annuali con Riepilogo Dati</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Anno</th>
+                            <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Totale</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                            <td style="width:50%">
+                                <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                2017
+                            </td>
+                            <td style="width:50%">
+                                <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                6.000€
+                            </td>
+                        </tr>
+                        <tr class="expandable-body">
+                            <td style="width:50%">
+                                <div class="p-0">
+                                    <table class="table table-hover table-striped" style="width:100%;margin:0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Gennaio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Febbraio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Marzo</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Aprile</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Maggio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Giugno</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Luglio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Agosto</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Settembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Ottobre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Novembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Dicembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Tredicesima</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width:50%">
+                                <div class="p-0">
+                                    <table class="table table-hover table-striped" style="width:100%;margin:0">
+                                        <tbody>
+                                            <tr>
+                                                <td>400€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>400€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>600€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>700€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>800€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>300€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>200€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>100€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>700€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>500€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>800€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>1200€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>767€</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                            <td style="width:50%">
+                                <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                2016
+                            </td>
+                            <td style="width:50%">
+                                <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                10.000€
+                            </td>
+                        </tr>
+                        <tr class="expandable-body">
+                            <td style="width:50%">
+                                <div class="p-0">
+                                    <table class="table table-hover table-striped" style="width:100%;margin:0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Gennaio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Febbraio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Marzo</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Aprile</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Maggio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Giugno</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Luglio</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Agosto</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Settembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Ottobre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Novembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Dicembre</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Tredicesima</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width:50%">
+                                <div class="p-0">
+                                    <table class="table table-hover table-striped" style="width:100%;margin:0">
+                                        <tbody>
+                                            <tr>
+                                                <td>400€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>400€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>677€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>777€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>888€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>333€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>222€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>1111€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>7777€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>5555€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>888€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>234€</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>767€</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="background:#0c773c;color:white;text-align:center;vertical-align:middle;font-weight:500;height:50px;font-size:40px">Riepilogo</h3>
+                <table class="table table-hover table-striped">
+
+                    <tbody>
+                        <tr>
+                            <td>Iscritto</td>
+                            <td>169772 - VITILLO FABIO</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Azienda</td>
+                            <td>34714 - CANTINA SOCIALE OGLIASTRA</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Data inizio - Data fine RDL</td>
+                            <td>01/05/2015 - 29/02/2016</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accantonato legge maggio 1982 n. 297</td>
+                            <td>0€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Saldo TRF Anno 2015</td>
+                            <td>1224,00€</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>Rivalutazione</td>
+                            <td>0€</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>Accantonato (al netto di importo FAP pari ad euro 30,49)</td>
+                            <td>422,40€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Imposta sostitutiva 17% della Rivalutazione</td>
+                            <td>0€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Saldo Anno 2016</td>
+                            <td>1646,00€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Anticipazione</td>
+                            <td>0€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Anticipazione Anni Precedenti</td>
+                            <td>0€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Importo Lordo spettante al 2000</td>
+                            <td>0€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Saldo Maturato dal 2001</td>
+                            <td>1646,00€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Reddito di Riferimento per mesi di anzianità 10</td>
+                            <td>19.752,00€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IRPEF su Reddito di Riferimento</td>
+                            <td>4542,96€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Rivalutazioni Nette</td>
+                            <td>0€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Abbattimento al 2000 di cui mesi di anzianità 0, percentuale part-time 100%</td>
+                            <td>0€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Imponibile Fiscale</td>
+                            <td>1646,00€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Importo IRPEF in base ad Aliquota Media Vecchia Normativa 23,00%</td>
+                            <td>378,58€</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Importo IRPEF in base ad Aliquota Media Nuova Normativa 23,96%</td>
+                            <td>394,38€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IRPEF già trattenuta</td>
+                            <td>0€</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>IRPEF già trattenuta in Anni Precedenti</td>
+                            <td>0€</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Detrazione Imposta (percentuale prestazione media 100%)</td>
+                            <td>51,64€</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="color:red">Importo Netto Arrotondato (-0,06€)</td>
+                            <td style="color:red">1319,00€</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+         
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-secondary" onclick="stampa()">Conferma liquidazione</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+<script>
+    function stampa() {
+        var txt;
+        var r = confirm("Sei sicuro?");
+        if (r == true) {
+            window.open('/Files/LIQUIDAZIONE_TFR_34714_169722_2_1_04_05_2021_11_53_44.pdf', '_blank', 'fullscreen=yes');
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        return false;
+    }
+</script>
