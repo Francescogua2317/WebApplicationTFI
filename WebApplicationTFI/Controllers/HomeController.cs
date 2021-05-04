@@ -30,9 +30,9 @@ namespace WebApplicationTFI.Controllers
         public ActionResult Anagrafica()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
-            
-
-            return View();
+           
+                return View();
+          
         }
 
         public ActionResult EstrattoConto()
@@ -44,10 +44,16 @@ namespace WebApplicationTFI.Controllers
         public ActionResult Scadenzario()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
 
         public ActionResult ScadenzarioFondo()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult Liquidazione()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();

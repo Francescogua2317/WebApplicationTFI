@@ -6,6 +6,7 @@
 
 <div class="dropdown">
     <center>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ricerca per nominativo...">
         <select style="text-align:center;width:200px;background:#0c773c;color:white" asp-for="DDLScadenzario" required="required" class="dropdown-toggle btn" id="DDLScadenzario" name="DDLScadenzario">
             <option selected>--Seleziona--</option>
             <option name="O" value="O">Ordinario</option>
@@ -14,11 +15,12 @@
         </select>
     </center>
 </div>
-<br/>
-<br/>
- <div class="card">
+<br />
+<br />
+<div class="card" id="divScadenzario">
     <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover table-striped">
+        <h3>Lista prestazioni</h3>
+        <table id="tblRDL" class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
                     <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Matricola</th>
@@ -28,14 +30,18 @@
                     <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Tipo</th>
                     <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Motivo Cessazione</th>
                     <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Carta Enpaia</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato PAEV</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato PREV</th>
                     <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Fondo Pagato</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Liquidazione</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Modifica Anagrafica</th>
+
+
                 </tr>
             </thead>
             <tbody style="text-align:center">
                 <tr>
                     <td>1234</td>
-                    <td>Franco Luigi</td>
+                    <td>Marco Nisticò</td>
                     <td>03/05/2016</td>
                     <td>03/05/2017</td>
                     <td>Suppletive</td>
@@ -43,30 +49,96 @@
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" />Modifica</td>
+
                 </tr>
                 <tr>
-                    <td>1234</td>
-                    <td>Giacomino Panevino</td>
-                    <td>03/05/2016</td>
-                    <td>03/05/2017</td>
+                    <td>1235</td>
+                    <td>Davide Lizzeri</td>
+                    <td>03/05/2015</td>
+                    <td>03/05/2018</td>
                     <td>Ordinario</td>
                     <td>Estinzione</td>
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" />Modifica</td>
+
                 </tr>
                 <tr>
-                    <td>1234</td>
-                    <td>Cosimo D'Avena</td>
-                    <td>03/05/2016</td>
-                    <td>03/05/2017</td>
+                    <td>1236</td>
+                    <td>Francesco Guarracino</td>
+                    <td>03/05/2012</td>
+                    <td>03/05/2020</td>
                     <td>Anticipazioni</td>
                     <td>Estinzione</td>
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
                     <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
+                </tr>
+                <tr>
+                    <td>1237</td>
+                    <td>Lanfranco Romei</td>
+                    <td>03/05/2018</td>
+                    <td>03/05/2019</td>
+                    <td>Anticipazioni</td>
+                    <td>Estinzione</td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tblRDL");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+<script>
+    $(document).on("change", "#DDLScadenziario", function () {
+        var value = $(this).val();
+        var txtValue, i;
+        table = document.getElementById("tblRDL");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(value) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+    });
+
+</script>
