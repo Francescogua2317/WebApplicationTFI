@@ -7,11 +7,11 @@
 <div class="dropdown">
     <center>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ricerca per nominativo...">
-        <select style="text-align:center;width:200px;background:#0c773c;color:white" asp-for="DDLScadenzario" required="required" class="dropdown-toggle btn" id="DDLScadenzario" name="DDLScadenzario">
-            <option selected>--Seleziona--</option>
-            <option name="O" value="O">Ordinario</option>
-            <option name="A" value="A">Anticipazioni</option>
-            <option name="S" value="S">Suppletive</option>
+        <select style="text-align:center;width:200px;background:#0c773c;color:white" asp-for="DDLScadenzario" required="required" class="dropdown-toggle btn" id="DDLScadenzario" name="DDLScadenzario" onchange="filterText()">
+            <option name="--Seleziona--" value="--Seleziona--" selected>--Seleziona--</option>
+            <option name="O" value="O" >Ordinario</option>
+            <option name="A" value="A" >Anticipazioni</option>
+            <option name="S" value="S" >Suppletive</option>
         </select>
     </center>
 </div>
@@ -39,7 +39,7 @@
                 </tr>
             </thead>
             <tbody style="text-align:center">
-                <tr>
+                <tr class="content">
                     <td>1234</td>
                     <td>Marco Nisticò</td>
                     <td>03/05/2016</td>
@@ -53,7 +53,7 @@
                     <td><button type="button" class="btn btn-secondary" />Modifica</td>
 
                 </tr>
-                <tr>
+                <tr class="content">
                     <td>1235</td>
                     <td>Davide Lizzeri</td>
                     <td>03/05/2015</td>
@@ -67,7 +67,7 @@
                     <td><button type="button" class="btn btn-secondary" />Modifica</td>
 
                 </tr>
-                <tr>
+                <tr class="content">
                     <td>1236</td>
                     <td>Francesco Guarracino</td>
                     <td>03/05/2012</td>
@@ -80,7 +80,7 @@
                     <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
                     <td><button type="button" class="btn btn-secondary" /> Modifica</td>
                 </tr>
-                <tr>
+                <tr class="content">
                     <td>1237</td>
                     <td>Lanfranco Romei</td>
                     <td>03/05/2018</td>
@@ -97,6 +97,7 @@
         </table>
     </div>
 </div>
+
 <script>
     function myFunction() {
         // Declare variables
@@ -120,6 +121,7 @@
         }
     }
 </script>
+
 <script>
     $(document).on("change", "#DDLScadenziario", function () {
         var value = $(this).val();
@@ -141,4 +143,21 @@
 
     });
 
+
+</script>
+<script>
+    function filterText() {
+        var rex = new RegExp($('#DDLScadenzario').val());
+        if (rex == "--Seleziona--") { clearFilter() } else {
+            $('.content').hide();
+            $('.content').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+        }
+    }
+
+    function clearFilter() {
+        $('.DDLScadenzario').val('');
+        $('.content').show();
+    }
 </script>
