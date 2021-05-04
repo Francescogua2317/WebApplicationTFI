@@ -2225,6 +2225,8 @@
     <Content Include="Views\Shared\_AziendaConsulenteLayout.cshtml" />
     <Content Include="Views\Home\Anagrafica.cshtml" />
     <Content Include="Views\Home\EstrattoConto.cshtml" />
+    <Content Include="Views\Home\Scadenzario.cshtml" />
+    <Content Include="Views\Home\ScadenzarioFondo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
