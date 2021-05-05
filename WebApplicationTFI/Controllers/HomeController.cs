@@ -22,9 +22,15 @@ namespace WebApplicationTFI.Controllers
         public ActionResult Anagrafica()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
-           
-                return View();
-          
+           if(Session["layout"].ToString()== "~/Views/Shared/_AmministrativoLayout.cshtml")
+            {
+                return View("~/Views/Home/Anagrafica.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
+            }
+            else
+            {
+                return View();        
+            }
+       
         }
 
         public ActionResult EstrattoConto()
@@ -50,5 +56,11 @@ namespace WebApplicationTFI.Controllers
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
+        public ActionResult ListaUtenti ()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+
     }
 }
