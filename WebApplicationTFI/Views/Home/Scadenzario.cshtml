@@ -1,150 +1,137 @@
-﻿
-@{
-    ViewBag.Title = "Scadenzario";
-    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
-}
+﻿@{ ViewBag.Title = "Scadenzario";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml"; }
 
-<div class="dropdown">
-    <center>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ricerca per nominativo...">
-        <select style="text-align:center;width:200px;background:#0c773c;color:white" asp-for="DDLScadenzario" required="required" class="dropdown-toggle btn" id="DDLScadenzario" name="DDLScadenzario">
-            <option selected>--Seleziona--</option>
-            <option name="O" value="O">Ordinario</option>
-            <option name="A" value="A">Anticipazioni</option>
-            <option name="S" value="S">Suppletive</option>
-        </select>
-    </center>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+<div class="input-group">
+    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="width:25%;border-color:#0c773c" name="s" autocomplete="off" autofocus>
+    <div class="input-group-btn" style="float:left">
+        <button type="button" class="btn btn-primary dropdown-toggle" style="background:#0c773c;border-color:#0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                id="deviceSelector">
+            --Seleziona--
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Ordinarie</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Anticipazioni</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Suppletive</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice('all')">Tutte</a>
+        </div>
+    </div>
 </div>
 <br />
 <br />
-<div class="card" id="divScadenzario">
+<div class="card">
     <div class="card-body">
-        <h3>Lista prestazioni</h3>
-        <table id="tblRDL" class="table table-bordered table-hover table-striped">
+        <table id="table" class="table  table-hover table-striped">
             <thead>
-                <tr>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Matricola</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nominativo</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Inizio</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Cessazione</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Tipo</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Motivo Cessazione</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Carta Enpaia</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato PREV</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Fondo Pagato</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Liquidazione</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Modifica Anagrafica</th>
-
-
+                <tr class="header" style="background:#0c773c;color:white">
+                    <th style="vertical-align:middle;text-align:center">Matricola</th>
+                    <th style="vertical-align:middle;text-align:center">Nominativo</th>
+                    <th style="vertical-align:middle;text-align:center">Data Inizio</th>
+                    <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
+                    <th style="vertical-align:middle;text-align:center">Tipo</th>
+                    <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
+                    <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
+                    <th style="vertical-align:middle;text-align:center">Stato PREV</th>
+                    <th style="vertical-align:middle;text-align:center">Fondo Pagato</th>
+                    <th style="vertical-align:middle;text-align:center">Liquidazione</th>
+                    <th style="vertical-align:middle;text-align:center">Modifica Anagrafica</th>
                 </tr>
             </thead>
-            <tbody style="text-align:center">
-                <tr>
+            <tbody>
+                <tr style="vertical-align:middle;text-align:center">
                     <td>1234</td>
                     <td>Marco Nisticò</td>
-                    <td>03/05/2016</td>
-                    <td>03/05/2017</td>
-                    <td>Suppletive</td>
-                    <td>Estinzione</td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
-                    <td><button type="button" class="btn btn-secondary" />Modifica</td>
-
+                    <td>06/07/2006</td>
+                    <td>06/08/2010</td>
+                    <td>Ordinarie</td>
+                    <td>Morte</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
-                <tr>
+                <tr style="vertical-align:middle;text-align:center">
                     <td>1235</td>
                     <td>Davide Lizzeri</td>
-                    <td>03/05/2015</td>
-                    <td>03/05/2018</td>
-                    <td>Ordinario</td>
-                    <td>Estinzione</td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
-                    <td><button type="button" class="btn btn-secondary" />Modifica</td>
-
+                    <td>10/08/2006</td>
+                    <td>06/08/2010</td>
+                    <td>Suppletive</td>
+                    <td>Incidente</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
-                <tr>
+                <tr style="vertical-align:middle;text-align:center">
                     <td>1236</td>
                     <td>Francesco Guarracino</td>
-                    <td>03/05/2012</td>
-                    <td>03/05/2020</td>
+                    <td>12/01/2007</td>
+                    <td>31/04/2012</td>
                     <td>Anticipazioni</td>
-                    <td>Estinzione</td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
-                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
+                    <td>Morte</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
-                <tr>
-                    <td>1237</td>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>1234</td>
                     <td>Lanfranco Romei</td>
-                    <td>03/05/2018</td>
-                    <td>03/05/2019</td>
-                    <td>Anticipazioni</td>
-                    <td>Estinzione</td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><input type="checkbox" /></td>
-                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
-                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
+                    <td>12/12/2012</td>
+                    <td>23/05/2017</td>
+                    <td>Ordinarie</td>
+                    <td>Invalidità</td>
+                    <td><input type="checkbox" class="checkbox checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline " /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-<script>
-    function myFunction() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("tblRDL");
-        tr = table.getElementsByTagName("tr");
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
+<script>
+    $(function () {
+        $('#search').on('input', function () {
+            searchRow();
+        });
+    })
+
+    function searchRow() {
+        var $rows = $('#table > tbody > tr').not(".header");
+        var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
+        var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
+        val2 = (val2 === "tutte") ? "" : val2;
+
+        $rows.show().filter(function () {
+            var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
+            var text2 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2);
+        }).hide();
     }
-</script>
-<script>
-    $(document).on("change", "#DDLScadenzario", function() {
-        var txtValue, i, table, td, tr;
-        table = document.getElementById("tblRDL");
-        tr = table.getElementsByTagName("tr");
 
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[4];
-            if (td) {
-                txtValue = td.text() || td.innerText;
-                if (txtValue.toUpperCase().indexOf(selectedOption) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
+    function searchTableDevice(device) {
+        var filter, table, tr, td, i;
+
+        $("#deviceSelector").html(device);
+
+        if (device == "all") {
+            $("#deviceSelector").html("Tutte");
         }
 
-    });
-
-</script>
-<script>
-    $('[id$=DropLogin]').change(function () {
-        var selectedOption = $("#DDLScadenzario option:selected").text();
-        $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
-
-    });
+        searchRow();
+    }
 </script>
