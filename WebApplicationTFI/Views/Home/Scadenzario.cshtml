@@ -6,160 +6,201 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
+<style>
+    .table td {
+        vertical-align: middle;
+    }
 
+    .table thead th {
+        vertical-align: middle;
+        text-align: center;
+    }
 
-<div class="input-group">
-    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="border-color:#0c773c;margin-right:20px" name="s" autocomplete="off" autofocus>
-    <input class="form-control" id="searchMat" placeholder="Ricerca per matricola..." style="border-color:#0c773c" name="s" autocomplete="off" autofocus>
-    <input class="form-control" id="searchAzienda" placeholder="Ricerca per azienda..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
-    <input class="form-control"  id="searchDataIn" placeholder="Ricerca per data inizio..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
-    <input class="form-control"  id="searchDataFin" placeholder="Ricerca per data cessazione..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
-    <div class="input-group-btn" style="float:left">
-        <button type="button" class="btn btn-primary dropdown-toggle" href="javascript:void(0)" onclick="searchTableDevice('all')" style="background:#0c773c;border-color:#0c773c;margin-left:20px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                id="deviceSelector">
-            --Seleziona--
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Ordinarie</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Anticipazioni</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Suppletive</a>
+    .input-group > .form-control {
+        border-color: #0c773c;
+        margin-right: 20px;
+    }
+</style>
+<div class="card" style="background-color:lightgray">
+    <div class="card-body">
+        <div class="input-group">
+            <div class="form-group" style="margin-left:100px">
+                <label>Matricola:</label>
+                <div class="input-group">
+                    <input class="form-control" id="searchMat" placeholder="Ricerca per matricola..." autocomplete="off" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nominativo:</label>
+                <div class="input-group">
+                    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." autocomplete="off" autofocus>
+                </div>
+            </div>
 
+            <div class="form-group">
+                <label>Tipo:</label>
+                <div class="input-group">
+                    <button type="button" class="btn dropdown-toggle" href="javascript:void(0)" onclick="searchTableDevice('all')" style="border-color:#0c773c;margin-right:20px;background:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            id="deviceSelector">
+                        --Seleziona--
+                    </button>
+                </div>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Ordinarie</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Anticipazioni</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Suppletive</a>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Periodo:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="background:#0c773c;color:white">
+                            <i class="far fa-calendar-alt"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control float-right" id="reservation">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Azienda:</label>
+                <div class="input-group">
+                    <input class="form-control" id="searchAzienda" placeholder="Ricerca per azienda..." autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
-</div>
-<br />
-<br />
-<div class="card">
-    <div class="card-body">
-        <table id="table" class="table  table-hover table-striped">
-            <thead>
-                <tr class="header" style="background:#0c773c;color:white">
-                    <th style="vertical-align:middle;text-align:center">Matricola</th>
-                    <th style="vertical-align:middle;text-align:center">Nominativo</th>
-                    <th style="vertical-align:middle;text-align:center">Data Inizio</th>
-                    <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
-                    <th style="vertical-align:middle;text-align:center">Tipo</th>
-                    <th style="vertical-align:middle;text-align:center">Nome Azienda</th>
-                    <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
-                    <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
-                    <th style="vertical-align:middle;text-align:center">Stato PREV</th>
-                    <th style="vertical-align:middle;text-align:center">Fondo Pagato</th>
-                    <th style="vertical-align:middle;text-align:center">Liquidazione</th>
-                    <th style="vertical-align:middle;text-align:center">Modifica Anagrafica</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="vertical-align:middle;text-align:center">
-                    <td>1234</td>
-                    <td>Marco Nisticò</td>
-                    <td>06/07/2006</td>
-                    <td>06/08/2011</td>
-                    <td>Ordinarie</td>
-                    <td>Società Agricola</td>
-                    <td>Morte</td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-                </tr>
-                <tr style="vertical-align:middle;text-align:center">
-                    <td>1235</td>
-                    <td>Davide Lizzeri</td>
-                    <td>10/08/2006</td>
-                    <td>06/08/2010</td>
-                    <td>Suppletive</td>
-                    <td>Società Agricola</td>
-                    <td>Incidente</td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-                </tr>
-                <tr style="vertical-align:middle;text-align:center">
-                    <td>1236</td>
-                    <td>Francesco Guarracino</td>
-                    <td>12/01/2007</td>
-                    <td>31/04/2012</td>
-                    <td>Anticipazioni</td>
-                    <td>Agro-Carota</td>
-                    <td>Morte</td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-                </tr>
-                <tr style="vertical-align:middle;text-align:center">
-                    <td>1237</td>
-                    <td>Lanfranco Romei</td>
-                    <td>12/12/2012</td>
-                    <td>23/05/2017</td>
-                    <td>Ordinarie</td>
-                    <td>Società Vinicola</td>
-                    <td>Invalidità</td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-                </tr>
-           
-            </tbody>
-        </table>
-    </div>
-</div>
+        <div class="card">
+            <div class="card-body">
+                <table id="table" class="table table-hover table-striped">
+                    <thead>
+                        <tr class="header" style="background:#0c773c;color:white">
+                            <th>Matricola</th>
+                            <th>Nominativo</th>
+                            <th>Data Inizio</th>
+                            <th>Data Cessazione</th>
+                            <th>Tipo</th>
+                            <th>Nome Azienda</th>
+                            <th>Motivo Cessazione</th>
+                            <th>Carta Enpaia</th>
+                            <th>Stato PREV</th>
+                            <th>Fondo Pagato</th>
+                            <th>Liquidazione</th>
+                            <th>Modifica Anagrafica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="vertical-align:middle;text-align:center">
+                            <td>1234</td>
+                            <td>Marco Nisticò</td>
+                            <td>06/07/2006</td>
+                            <td>06/08/2011</td>
+                            <td>Ordinarie</td>
+                            <td>Società Agricola</td>
+                            <td>Morte</td>
+                            <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                        </tr>
+                        <tr style="vertical-align:middle;text-align:center">
+                            <td>1235</td>
+                            <td>Davide Lizzeri</td>
+                            <td>10/08/2006</td>
+                            <td>06/08/2010</td>
+                            <td>Suppletive</td>
+                            <td>Società Agricola</td>
+                            <td>Incidente</td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                        </tr>
+                        <tr style="vertical-align:middle;text-align:center">
+                            <td>1236</td>
+                            <td>Francesco Guarracino</td>
+                            <td>12/01/2007</td>
+                            <td>31/04/2012</td>
+                            <td>Anticipazioni</td>
+                            <td>Agro-Carota</td>
+                            <td>Morte</td>
+                            <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                        </tr>
+                        <tr style="vertical-align:middle;text-align:center">
+                            <td>1237</td>
+                            <td>Lanfranco Romei</td>
+                            <td>12/12/2012</td>
+                            <td>23/05/2017</td>
+                            <td>Ordinarie</td>
+                            <td>Società Vinicola</td>
+                            <td>Invalidità</td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                            <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                        </tr>
 
-<script>
-    $(function () {
-        $('#search').on('input', function () {
-            searchRow();
-        });
-        $('#searchMat').on('input', function () {
-            searchRow();
-        });
-        $('#searchAzienda').on('input', function () {
-            searchRow();
-        });
-        $('#searchDataIn').on('input', function () {
-            searchRow();
-        });
-        $('#searchDataFin').on('input', function () {
-            searchRow();
-        });
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    })
+        <script>
+            $(function () {
+                $('#search').on('input', function () {
+                    searchRow();
+                });
+                $('#searchMat').on('input', function () {
+                    searchRow();
+                });
+                $('#searchAzienda').on('input', function () {
+                    searchRow();
+                });
 
-    function searchRow() {
-        var $rows = $('#table > tbody > tr').not(".header");
-        var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
-        var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
-        var val3 = $.trim($('#searchMat').val()).replace(' ').toLowerCase();
-        var val4 = $.trim($('#searchAzienda').val()).replace(' ').toLowerCase();
-        var val5 = $.trim($('#searchDataIn').val()).replace(' ').toLowerCase();
-        var val6 = $.trim($('#searchDataFin').val()).replace(' ').toLowerCase();
-        val2 = (val2 === "--seleziona--") ? "" : val2;
+            })
 
-        $rows.show().filter(function () {
-            var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
-            var text2 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
-            var text3 = $(this).find('td:nth-child(1)').text().replace(' ').toLowerCase();
-            var text4 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
-            var text5 = $(this).find('td:nth-child(3)').text().replace(' ').toLowerCase();
-            var text6 = $(this).find('td:nth-child(4)').text().replace(' ').toLowerCase();
-            return !~text1.indexOf(val1) || !~text2.indexOf(val2) || !~text3.indexOf(val3) || !~text4.indexOf(val4) || !~text5.indexOf(val5) || !~text6.indexOf(val6);
-        }).hide();
-    }
-    function searchTableDevice(device) {
-        var filter, table, tr, td, i;
+            function searchRow() {
+                var $rows = $('#table > tbody > tr').not(".header");
+                var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
+                var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
+                var val3 = $.trim($('#searchMat').val()).replace(' ').toLowerCase();
+                var val4 = $.trim($('#searchAzienda').val()).replace(' ').toLowerCase();
+                val2 = (val2 === "--seleziona--") ? "" : val2;
 
-        $("#deviceSelector").html(device);
+                $rows.show().filter(function () {
+                    var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
+                    var text2 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
+                    var text3 = $(this).find('td:nth-child(1)').text().replace(' ').toLowerCase();
+                    var text4 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
+                    return !~text1.indexOf(val1) || !~text2.indexOf(val2) || !~text3.indexOf(val3) || !~text4.indexOf(val4);
+                }).hide();
+            }
+            function searchTableDevice(device) {
+                var filter, table, tr, td, i;
 
-        if (device == "all") {
-            $("#deviceSelector").html("--Seleziona--");
-        }
+                $("#deviceSelector").html(device);
 
-        searchRow();
-    }
-</script>
+                if (device == "all") {
+                    $("#deviceSelector").html("--Seleziona--");
+                }
+
+                searchRow();
+            }
+        </script>
+
+        <script>
+            $(function () {
+                //Date range picker
+                $('#reservation').daterangepicker();
+            })
+        </script>

@@ -2231,6 +2231,9 @@
     <Content Include="Views\Home\Scadenzario.cshtml" />
     <Content Include="Views\Home\Liquidazione.cshtml" />
     <Content Include="Views\Home\ListaUtenti.cshtml" />
+    <Content Include="Views\Home\ProspettoCartaEnpaia.cshtml" />
+    <Content Include="Views\Home\ProspettoPREV.cshtml" />
+    <Content Include="Views\Home\ProspettoFondo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
