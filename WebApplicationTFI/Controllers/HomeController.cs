@@ -14,14 +14,6 @@ namespace WebApplicationTFI.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
