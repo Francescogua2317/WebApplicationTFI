@@ -279,6 +279,8 @@
     <Content Include="Images\getadobe.jpg" />
     <Content Include="Images\imgPDF.jpg" />
     <Content Include="Images\Logo-Fondazione-Enpaia.jpg" />
+    <Content Include="Images\Sign-check.jpg" />
+    <Content Include="Images\Sign-X.jpg" />
     <Content Include="Images\user.png" />
     <Content Include="Images\utente.png" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
