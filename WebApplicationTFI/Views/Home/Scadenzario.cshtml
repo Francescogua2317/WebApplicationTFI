@@ -121,17 +121,16 @@
     }
 </script>
 <script>
-    $(document).on("change", "#DDLScadenziario", function () {
-        var value = $(this).val();
-        var txtValue, i;
+    $(document).on("change", "#DDLScadenzario", function() {
+        var txtValue, i, table, td, tr;
         table = document.getElementById("tblRDL");
         tr = table.getElementsByTagName("tr");
 
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[4];
             if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(value) > -1) {
+                txtValue = td.text() || td.innerText;
+                if (txtValue.toUpperCase().indexOf(selectedOption) > -1) {
                     tr[i].style.display = "";
                 } else {
                     tr[i].style.display = "none";
@@ -141,4 +140,11 @@
 
     });
 
+</script>
+<script>
+    $('[id$=DropLogin]').change(function () {
+        var selectedOption = $("#DDLScadenzario option:selected").text();
+        $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
+
+    });
 </script>
