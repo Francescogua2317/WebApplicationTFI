@@ -3,21 +3,31 @@
     ViewBag.Title = "ListaUtenti";
     Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
 }
+
+<style>
+    .table thead th {
+        background: #0c773c;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+
 <div class="card">
     <div class="card-body">
         <h3>Lista Utenti</h3>
         <table id="tblRDL" class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Matricola</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nominativo</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Codice Fiscale</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Nascita</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Sesso</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Comune</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Provincia</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato Estero</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle"></th>
+                    <th>Matricola</th>
+                    <th>Nominativo</th>
+                    <th>Codice Fiscale</th>
+                    <th>Data Nascita</th>
+                    <th>Sesso</th>
+                    <th>Comune</th>
+                    <th>Provincia</th>
+                    <th>Stato Estero</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody style="text-align:center">
@@ -31,7 +41,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -44,7 +54,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' />Dettaglio</td>
+                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Home")' />Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -57,7 +67,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
                 </tr>
                 <tr>
                     <td>1237</td>
@@ -69,7 +79,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
                 </tr>
             </tbody>
         </table>

@@ -20,6 +20,33 @@
         border-color: #0c773c;
         margin-right: 20px;
     }
+    .cancelBtn{
+       visibility:hidden;
+    }
+        .cancelBtn::after {
+            content: 'Esci';
+            visibility: visible;
+            background-color: #0c773c;
+            color: white;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+        }
+    .applyBtn {
+        visibility: hidden;
+    }
+
+        .applyBtn::after {
+            content: 'Vai';
+            background-color: #0c773c;
+            color: white;
+            border: 1px solid black;
+            width: 10px;
+            visibility: visible;
+            padding: 5px 10px 5px 10px;
+        }
+    .daterangepicker td.active, .daterangepicker td.active:hover {
+        background-color: #0c773c;
+    }
 </style>
 <div class="card" style="background-color:lightgray">
     <div class="card-body">
@@ -104,8 +131,8 @@
                             <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                             <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn " style="background-color:lightgrey">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn" style="background-color:lightgrey">Modifica</a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1235</td>
@@ -118,8 +145,8 @@
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                             <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn" style="background-color:lightgrey">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn" style="background-color:lightgrey">Modifica</a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1236</td>
@@ -132,8 +159,8 @@
                             <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                             <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn" style="background-color:lightgrey">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn" style="background-color:lightgrey">Modifica</a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1237</td>
@@ -146,8 +173,8 @@
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                             <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn" style="background-color:lightgrey">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn" style="background-color:lightgrey">Modifica</a></td>
+                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
+                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
                         </tr>
 
                     </tbody>
