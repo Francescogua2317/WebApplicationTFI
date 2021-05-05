@@ -1,8 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Scadenzario";
-    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
-}
+﻿@{ ViewBag.Title = "Scadenzario";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml"; }
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,10 +9,10 @@
 
 
 
-<div class="input-group" >
-    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="width:25%;border-color:#0c773c"  name="s" autocomplete="off" autofocus>
+<div class="input-group">
+    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="width:25%;border-color:#0c773c" name="s" autocomplete="off" autofocus>
     <div class="input-group-btn" style="float:left">
-        <button type="button" class="btn btn-primary dropdown-toggle" style="background:#0c773c;border-color:#0c773c"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        <button type="button" class="btn btn-primary dropdown-toggle" style="background:#0c773c;border-color:#0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 id="deviceSelector">
             --Seleziona--
         </button>
@@ -32,75 +29,90 @@
 <br />
 <div class="card">
     <div class="card-body">
-        <table id="table" class="table-striped table-hover table">
-            <tr class="header" style="background:#0c773c;color:white">
-                <th style="vertical-align:middle;text-align:center">Matricola</th>
-                <th style="vertical-align:middle;text-align:center">Nominativo</th>
-                <th style="vertical-align:middle;text-align:center">Data Inizio</th>
-                <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
-                <th style="vertical-align:middle;text-align:center">Tipo</th>
-                <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
-                <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
-                <th style="vertical-align:middle;text-align:center">Stato PREV</th>
-                <th style="vertical-align:middle;text-align:center">Fondo Pagato</th>
-                <th style="vertical-align:middle;text-align:center">Liquidazione</th>
-                <th style="vertical-align:middle;text-align:center">Modifica Anagrafica</th>
-            </tr>
-            <tr style="vertical-align:middle;text-align:center">
-                <td>1234</td>
-                <td>Marco Nisticò</td>
-                <td>06/07/2006</td>
-                <td>06/08/2010</td>
-                <td>Ordinarie</td>
-                <td>Morte</td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-            </tr>
-            <tr style="vertical-align:middle;text-align:center">
-                <td>1235</td>
-                <td>Davide Lizzeri</td>
-                <td>10/08/2006</td>
-                <td>06/08/2010</td>
-                <td>Suppletive</td>
-                <td>Incidente</td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-            </tr>
-            <tr style="vertical-align:middle;text-align:center">
-                <td>1236</td>
-                <td>Francesco Guarracino</td>
-                <td>12/01/2007</td>
-                <td>31/04/2012</td>
-                <td>Anticipazioni</td>
-                <td>Morte</td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-            </tr>
-            <tr style="vertical-align:middle;text-align:center">
-                <td>1234</td>
-                <td>Lanfranco Romei</td>
-                <td>12/12/2012</td>
-                <td>23/05/2017</td>
-                <td>Ordinario</td>
-                <td>Invalidità</td>
-                <td><input type="checkbox" class="checkbox checkbox-inline" /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline " /></td>
-                <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
-                <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
-            </tr>
+        <table id="table" class="table  table-hover table-striped">
+            <thead>
+                <tr class="header" style="background:#0c773c;color:white">
+                    <th style="vertical-align:middle;text-align:center">Matricola</th>
+                    <th style="vertical-align:middle;text-align:center">Nominativo</th>
+                    <th style="vertical-align:middle;text-align:center">Data Inizio</th>
+                    <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
+                    <th style="vertical-align:middle;text-align:center">Tipo</th>
+                    <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
+                    <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
+                    <th style="vertical-align:middle;text-align:center">Stato PREV</th>
+                    <th style="vertical-align:middle;text-align:center">Fondo Pagato</th>
+                    <th style="vertical-align:middle;text-align:center">Liquidazione</th>
+                    <th style="vertical-align:middle;text-align:center">Modifica Anagrafica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>1234</td>
+                    <td>Marco Nisticò</td>
+                    <td>06/07/2006</td>
+                    <td>06/08/2010</td>
+                    <td>Ordinarie</td>
+                    <td>Morte</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>1235</td>
+                    <td>Davide Lizzeri</td>
+                    <td>10/08/2006</td>
+                    <td>06/08/2010</td>
+                    <td>Suppletive</td>
+                    <td>Incidente</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>1236</td>
+                    <td>Francesco Guarracino</td>
+                    <td>12/01/2007</td>
+                    <td>31/04/2012</td>
+                    <td>Anticipazioni</td>
+                    <td>Morte</td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>1234</td>
+                    <td>Lanfranco Romei</td>
+                    <td>12/12/2012</td>
+                    <td>23/05/2017</td>
+                    <td>Ordinarie</td>
+                    <td>Invalidità</td>
+                    <td><input type="checkbox" class="checkbox checkbox-inline" /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline " /></td>
+                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
+                    <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
+                </tr>
+            </tbody>
+                    <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
+                </tr>
+            </tbody>
+                    <td><input type="checkbox" /></td>
+                    <td><a type="button" class="btn btn-secondary" href="@Url.Action("Liquidazione","Home")" />Liquidazione</td>
+                    <td><button type="button" class="btn btn-secondary" /> Modifica</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
+
 <script>
     $(function () {
         $('#search').on('input', function () {
@@ -120,16 +132,12 @@
             return !~text1.indexOf(val1) || !~text2.indexOf(val2);
         }).hide();
     }
-
-    function searchTableDevice(device) {
-        var filter, table, tr, td, i;
-
-        $("#deviceSelector").html(device);
-
-        if (device == "all") {
-            $("#deviceSelector").html("Tutte");
-        }
-
         searchRow();
     }
+</script>
+        $("#deviceSelector").html(device);
+    });
+
+</script>    });
+
 </script>

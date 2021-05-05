@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "ListaUtenti";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <h3>Lista Utenti</h3>
+        <table id="tblRDL" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Matricola</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nominativo</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Codice Fiscale</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Nascita</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Sesso</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Comune</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Provincia</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Stato Estero</th>
+                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle"></th>
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                <tr>
+                    <td>1234</td>
+                    <td>Marco Nisticò</td>
+                    <td>RSSMRA71E05H501Q</td>
+                    <td>03/05/2000</td>
+                    <td>M</td>
+                    <td>Roma</td>
+                    <td>RM</td>
+                    <td>Italia</td>
+
+                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+
+                </tr>
+                <tr>
+                    <td>1235</td>
+                    <td>Davide Lizzeri</td>
+                    <td>RSSMRA71E05H501Q</td>
+                    <td>03/05/2000</td>
+                    <td>M</td>
+                    <td>Roma</td>
+                    <td>RM</td>
+                    <td>Italia</td>
+
+                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' />Dettaglio</td>
+
+                </tr>
+                <tr>
+                    <td>1236</td>
+                    <td>Francesco Guarracino</td>
+                    <td>RSSMRA71E05H501Q</td>
+                    <td>03/05/2000</td>
+                    <td>M</td>
+                    <td>Roma</td>
+                    <td>RM</td>
+                    <td>Italia</td>
+
+                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+                </tr>
+                <tr>
+                    <td>1237</td>
+                    <td>Lanfranco Romei</td>
+                    <td>RSSMRA71E05H501Q</td>
+                    <td>03/05/2000</td>
+                    <td>M</td>
+                    <td>Roma</td>
+                    <td>RM</td>
+                    <td>Italia</td>
+
+                    <td><a type="button" class="btn btn-secondary" href='@Url.Action("Anagrafica", "Home")' /> Dettaglio</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
