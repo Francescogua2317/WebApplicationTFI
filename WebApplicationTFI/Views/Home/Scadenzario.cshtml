@@ -20,6 +20,33 @@
         border-color: #0c773c;
         margin-right: 20px;
     }
+    .cancelBtn{
+       visibility:hidden;
+    }
+        .cancelBtn::after {
+            content: 'Esci';
+            visibility: visible;
+            background-color: #0c773c;
+            color: white;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+        }
+    .applyBtn {
+        visibility: hidden;
+    }
+
+        .applyBtn::after {
+            content: 'Vai';
+            background-color: #0c773c;
+            color: white;
+            border: 1px solid black;
+            width: 10px;
+            visibility: visible;
+            padding: 5px 10px 5px 10px;
+        }
+    .daterangepicker td.active, .daterangepicker td.active:hover {
+        background-color: #0c773c;
+    }
 </style>
 <div class="card" style="background-color:lightgray">
     <div class="card-body">
