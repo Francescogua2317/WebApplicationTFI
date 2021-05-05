@@ -4,15 +4,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
 
 <div class="input-group">
-    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="width:25%;border-color:#0c773c" name="s" autocomplete="off" autofocus>
+    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="border-color:#0c773c" autocomplete="off" autofocus>
+    <input class="form-control" id="search2" placeholder="Ricerca per azienda..." style="border-color:#0c773c" autocomplete="off" autofocus>
     <div class="input-group-btn" style="float:left">
-        <button type="button" class="btn btn-primary dropdown-toggle" style="background:#0c773c;border-color:#0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        <button type="button" class="btn btn-primary dropdown-toggle" style="margin-right: 800px;background: #0c773c; border-color: #0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 id="deviceSelector">
             --Seleziona--
         </button>
@@ -108,18 +108,24 @@
         $('#search').on('input', function () {
             searchRow();
         });
+        $('#search2').on('input', function () {
+            searchRow();
+        });
     })
 
     function searchRow() {
         var $rows = $('#table > tbody > tr').not(".header");
         var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
         var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
+        var val3 = $.trim($('#search2').val()).replace(' ').toLowerCase();
         val2 = (val2 === "tutte") ? "" : val2;
 
         $rows.show().filter(function () {
             var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
             var text2 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
-            return !~text1.indexOf(val1) || !~text2.indexOf(val2);
+            var text3 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
+
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2); || !~text3.indexOf(val3);
         }).hide();
     }
 
