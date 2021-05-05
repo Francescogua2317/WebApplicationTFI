@@ -2234,6 +2234,7 @@
     <Content Include="Views\Home\ProspettoCartaEnpaia.cshtml" />
     <Content Include="Views\Home\ProspettoPREV.cshtml" />
     <Content Include="Views\Home\ProspettoFondo.cshtml" />
+    <Content Include="Views\Home\EstrattoContoAzienda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
