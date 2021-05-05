@@ -121,13 +121,13 @@
                 $("#Login").prop("placeholder", "Username");
             }
         });
-       
+
     </script>
-   <script>
-       $('[id$=DropLogin]').change(function () {
-           var selectedOption = $("#DropLogin option:selected").val();
-           $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
-       });
-   </script>
+    <script>
+        $('[id$=DropLogin]').change(function () {
+            var selectedOption = $("#DropLogin option:selected").val();
+            $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
+        });
+    </script>
 </body>
 </html>

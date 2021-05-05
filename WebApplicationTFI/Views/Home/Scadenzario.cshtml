@@ -9,10 +9,13 @@
 
 
 <div class="input-group">
-    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="border-color:#0c773c" autocomplete="off" autofocus>
-    <input class="form-control" id="search2" placeholder="Ricerca per azienda..." style="border-color:#0c773c" autocomplete="off" autofocus>
+    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="border-color:#0c773c;margin-right:20px" name="s" autocomplete="off" autofocus>
+    <input class="form-control" id="searchMat" placeholder="Ricerca per matricola..." style="border-color:#0c773c" name="s" autocomplete="off" autofocus>
+    <input class="form-control" id="searchAzienda" placeholder="Ricerca per azienda..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
+    <input class="form-control"  id="searchDataIn" placeholder="Ricerca per data inizio..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
+    <input class="form-control"  id="searchDataFin" placeholder="Ricerca per data cessazione..." style="border-color:#0c773c;margin-left:20px" name="s" autocomplete="off" autofocus>
     <div class="input-group-btn" style="float:left">
-        <button type="button" class="btn btn-primary dropdown-toggle" style="margin-right: 800px;background: #0c773c; border-color: #0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        <button type="button" class="btn btn-primary dropdown-toggle" href="javascript:void(0)" onclick="searchTableDevice('all')" style="background:#0c773c;border-color:#0c773c;margin-left:20px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 id="deviceSelector">
             --Seleziona--
         </button>
@@ -20,8 +23,7 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Ordinarie</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Anticipazioni</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">Suppletive</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice('all')">Tutte</a>
+
         </div>
     </div>
 </div>
@@ -37,6 +39,7 @@
                     <th style="vertical-align:middle;text-align:center">Data Inizio</th>
                     <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
                     <th style="vertical-align:middle;text-align:center">Tipo</th>
+                    <th style="vertical-align:middle;text-align:center">Nome Azienda</th>
                     <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
                     <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
                     <th style="vertical-align:middle;text-align:center">Stato PREV</th>
@@ -50,12 +53,13 @@
                     <td>1234</td>
                     <td>Marco Nisticò</td>
                     <td>06/07/2006</td>
-                    <td>06/08/2010</td>
+                    <td>06/08/2011</td>
                     <td>Ordinarie</td>
+                    <td>Società Agricola</td>
                     <td>Morte</td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                     <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
                     <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
@@ -65,10 +69,11 @@
                     <td>10/08/2006</td>
                     <td>06/08/2010</td>
                     <td>Suppletive</td>
+                    <td>Società Agricola</td>
                     <td>Incidente</td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                     <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
                     <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
@@ -78,26 +83,29 @@
                     <td>12/01/2007</td>
                     <td>31/04/2012</td>
                     <td>Anticipazioni</td>
+                    <td>Agro-Carota</td>
                     <td>Morte</td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                     <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
                     <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
                 <tr style="vertical-align:middle;text-align:center">
-                    <td>1234</td>
+                    <td>1237</td>
                     <td>Lanfranco Romei</td>
                     <td>12/12/2012</td>
                     <td>23/05/2017</td>
                     <td>Ordinarie</td>
+                    <td>Società Vinicola</td>
                     <td>Invalidità</td>
-                    <td><input type="checkbox" class="checkbox checkbox-inline" /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline " /></td>
-                    <td><input type="checkbox" class="checkbox  checkbox-inline" /></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
+                    <td><a href="#"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
+                    <td><a href="#"><img width="30" src="~/Images/Sign-X.jpg" /></a></td>
                     <td><a type="button" href="@Url.Action("Liquidazione", "Home")" class="btn btn-secondary">Liquidazione</a></td>
                     <td><a type="button" href="@Url.Action("Anagrafica", "Home")" class="btn btn-secondary">Modifica</a></td>
                 </tr>
+           
             </tbody>
         </table>
     </div>
@@ -108,34 +116,48 @@
         $('#search').on('input', function () {
             searchRow();
         });
-        $('#search2').on('input', function () {
+        $('#searchMat').on('input', function () {
             searchRow();
         });
+        $('#searchAzienda').on('input', function () {
+            searchRow();
+        });
+        $('#searchDataIn').on('input', function () {
+            searchRow();
+        });
+        $('#searchDataFin').on('input', function () {
+            searchRow();
+        });
+
     })
 
     function searchRow() {
         var $rows = $('#table > tbody > tr').not(".header");
         var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
         var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
-        var val3 = $.trim($('#search2').val()).replace(' ').toLowerCase();
-        val2 = (val2 === "tutte") ? "" : val2;
+        var val3 = $.trim($('#searchMat').val()).replace(' ').toLowerCase();
+        var val4 = $.trim($('#searchAzienda').val()).replace(' ').toLowerCase();
+        var val5 = $.trim($('#searchDataIn').val()).replace(' ').toLowerCase();
+        var val6 = $.trim($('#searchDataFin').val()).replace(' ').toLowerCase();
+        val2 = (val2 === "--seleziona--") ? "" : val2;
 
         $rows.show().filter(function () {
             var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
             var text2 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
-            var text3 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
-
-            return !~text1.indexOf(val1) || !~text2.indexOf(val2); || !~text3.indexOf(val3);
+            var text3 = $(this).find('td:nth-child(1)').text().replace(' ').toLowerCase();
+            var text4 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
+            var text5 = $(this).find('td:nth-child(3)').text().replace(' ').toLowerCase();
+            var text6 = $(this).find('td:nth-child(4)').text().replace(' ').toLowerCase();
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2) || !~text3.indexOf(val3) || !~text4.indexOf(val4) || !~text5.indexOf(val5) || !~text6.indexOf(val6);
         }).hide();
     }
-
     function searchTableDevice(device) {
         var filter, table, tr, td, i;
 
         $("#deviceSelector").html(device);
 
         if (device == "all") {
-            $("#deviceSelector").html("Tutte");
+            $("#deviceSelector").html("--Seleziona--");
         }
 
         searchRow();
