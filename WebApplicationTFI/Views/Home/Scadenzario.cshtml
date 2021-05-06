@@ -11,6 +11,8 @@
 
 <div class="input-group">
     <input class="form-control" id="search" placeholder="Ricerca per nominativo..." style="width:25%;border-color:#0c773c" name="s" autocomplete="off" autofocus>
+
+
     <div class="input-group-btn" style="float:left">
         <button type="button" class="btn btn-primary dropdown-toggle" style="background:#0c773c;border-color:#0c773c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 id="deviceSelector">
@@ -24,6 +26,7 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice('all')">Tutte</a>
         </div>
     </div>
+
 </div>
 <br />
 <br />
@@ -35,7 +38,7 @@
                     <th style="vertical-align:middle;text-align:center">Matricola</th>
                     <th style="vertical-align:middle;text-align:center">Nominativo</th>
                     <th style="vertical-align:middle;text-align:center">Data Inizio</th>
-                    <th style="vertical-align:middle;text-align:center">Data Cessazione</th>
+                    <th style="vertical-align:middle;text-align:center" class="f">Data Cessazione</th>
                     <th style="vertical-align:middle;text-align:center">Tipo</th>
                     <th style="vertical-align:middle;text-align:center">Motivo Cessazione</th>
                     <th style="vertical-align:middle;text-align:center">Carta Enpaia</th>
@@ -49,7 +52,7 @@
                 <tr style="vertical-align:middle;text-align:center">
                     <td>1234</td>
                     <td>Marco Nisticò</td>
-                    <td>06/07/2006</td>
+                    <td class="i">06/07/2006</td>
                     <td>06/08/2010</td>
                     <td>Ordinarie</td>
                     <td>Morte</td>
@@ -62,7 +65,7 @@
                 <tr style="vertical-align:middle;text-align:center">
                     <td>1235</td>
                     <td>Davide Lizzeri</td>
-                    <td>10/08/2006</td>
+                    <td class="i">10/08/2006</td>
                     <td>06/08/2010</td>
                     <td>Suppletive</td>
                     <td>Incidente</td>
@@ -75,7 +78,7 @@
                 <tr style="vertical-align:middle;text-align:center">
                     <td>1236</td>
                     <td>Francesco Guarracino</td>
-                    <td>12/01/2007</td>
+                    <td class="i">12/01/2007</td>
                     <td>31/04/2012</td>
                     <td>Anticipazioni</td>
                     <td>Morte</td>
@@ -88,7 +91,7 @@
                 <tr style="vertical-align:middle;text-align:center">
                     <td>1234</td>
                     <td>Lanfranco Romei</td>
-                    <td>12/12/2012</td>
+                    <td class="i">12/12/2012</td>
                     <td>23/05/2017</td>
                     <td>Ordinarie</td>
                     <td>Invalidità</td>
@@ -102,7 +105,8 @@
         </table>
     </div>
 </div>
-
+<input id="searchFrom" class="searchInput" type="text" placeholder="From" />
+<input id="searchTo" class="searchInput" type="text" placeholder="To">
 <script>
     $(function () {
         $('#search').on('input', function () {
@@ -133,5 +137,43 @@
         }
 
         searchRow();
+    }
+</script>
+<script>
+    $(".searchInput").on("input", function () {
+        var from = stringToDate($("#searchFrom").val());
+        var to = stringToDate($("#searchTo").val());
+
+        $(".table tr").each(function () {
+            var row = $(this);
+            var date = stringToDate(row.find("td").eq(2).text());
+
+            //show all rows by default
+            var show = true;
+
+            //if from date is valid and row date is less than from date, hide the row
+            if (from && date < from)
+                show = false;
+
+            //if to date is valid and row date is greater than to date, hide the row
+            if (to && date > to)
+                show = false;
+
+            if (show)
+                row.show();
+            else
+                row.hide();
+        });
+    });
+
+    //parse entered date. return NaN if invalid
+    function stringToDate(s) {
+        var ret = NaN;
+        var parts = s.split("/");
+        date = new Date(parts[2], parts[0], parts[1]);
+        if (!isNaN(date.getTime())) {
+            ret = date;
+        }
+        return ret;
     }
 </script>
