@@ -4,20 +4,59 @@
     Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
 }
 
-<h2 style="text-align:center">Liquidazione</h2>
+<h2 style="text-align:center">Liquidazione di Marco Nisticò</h2>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-hover table-striped">
+
+            <tbody>
+                <tr>
+                    <td>Iscritto</td>
+                    <td>169772 - MARCO NISTICO'</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Azienda</td>
+                    <td>34714 - SOCIETA' AGRICOLA</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Data inizio - Data fine RDL</td>
+                    <td>06/07/2006 - 06/08/2011</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
+
+<style>
+    .table thead th {
+        background: #0c773c;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
 
 <div class="card" id="divRDL">
     <div class="card-body">
-        <h3 style="text-align:center">Lista RDL</h3>
+        <h3 style="text-align:center">Lista Rapporti di Lavoro</h3>
         <table id="tblRDL" class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">ID</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Nome Azienda</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Inizio</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Data Cessazione</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Totale stipendi</th>
-                    <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Lista annuali</th>
+                    <th>ID</th>
+                    <th>Nome Azienda</th>
+                    <th>Data Inizio</th>
+                    <th>Data Cessazione</th>
+                    <th>Totale stipendi</th>
+                    <th>Lista annuali</th>
 
                 </tr>
             </thead>
@@ -29,8 +68,8 @@
                     <td>03/05/2017</td>
                     <td>10.000€</td>
                     <td>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
-                            Visualizza Lista Annuali
+                        <button type="button" style="color:black;background-color:lightgray"  class="btn" data-toggle="modal" data-target="#modal-lg">
+                            Prospetto Liquidazione
                         </button>
                     </td>
 
@@ -43,8 +82,8 @@
                     <td>03/05/2017</td>
                     <td>50.000€</td>
                     <td>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
-                            Visualizza Lista Annuali
+                        <button type="button" style="color:black;background-color:lightgray"  class="btn" data-toggle="modal" data-target="#modal-lg">
+                            Prospetto Liquidazione
                         </button>
                     </td>
 
@@ -57,8 +96,8 @@
                     <td>03/05/2017</td>
                     <td>25.000€</td>
                     <td>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-lg">
-                            Visualizza Lista Annuali
+                        <button type="button" style="color:black;background-color:lightgray"  class="btn" data-toggle="modal" data-target="#modal-lg">
+                            Prospetto Liquidazione
                         </button>
                     </td>
 
@@ -84,8 +123,8 @@
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
-                            <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Anno</th>
-                            <th style="background:#0c773c;color:white;text-align:center;vertical-align:middle">Totale</th>
+                            <th>Anno</th>
+                            <th>Totale</th>
 
                         </tr>
                     </thead>
@@ -499,8 +538,8 @@
             </div>
          
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-                <button type="button" class="btn btn-secondary" onclick="stampa()">Conferma liquidazione</button>
+                <button type="button" style="color:black;background-color:lightgray" class="btn" data-dismiss="modal">Chiudi</button>
+                <button type="button" style="color:white;background-color: #0c773c" class="btn" onclick="stampa()">Conferma liquidazione</button>
 
             </div>
         </div>
@@ -517,6 +556,7 @@
         } else {
             txt = "You pressed Cancel!";
         }
+        window.location.href = "Scadenzario";
         return false;
     }
 </script>

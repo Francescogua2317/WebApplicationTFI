@@ -279,6 +279,8 @@
     <Content Include="Images\getadobe.jpg" />
     <Content Include="Images\imgPDF.jpg" />
     <Content Include="Images\Logo-Fondazione-Enpaia.jpg" />
+    <Content Include="Images\Sign-check.jpg" />
+    <Content Include="Images\Sign-X.jpg" />
     <Content Include="Images\user.png" />
     <Content Include="Images\utente.png" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
@@ -2227,9 +2229,12 @@
     <Content Include="Views\Home\Anagrafica.cshtml" />
     <Content Include="Views\Home\EstrattoConto.cshtml" />
     <Content Include="Views\Home\Scadenzario.cshtml" />
-    <Content Include="Views\Home\ScadenzarioFondo.cshtml" />
     <Content Include="Views\Home\Liquidazione.cshtml" />
     <Content Include="Views\Home\ListaUtenti.cshtml" />
+    <Content Include="Views\Home\ProspettoCartaEnpaia.cshtml" />
+    <Content Include="Views\Home\ProspettoPREV.cshtml" />
+    <Content Include="Views\Home\ProspettoFondo.cshtml" />
+    <Content Include="Views\Home\EstrattoContoAzienda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

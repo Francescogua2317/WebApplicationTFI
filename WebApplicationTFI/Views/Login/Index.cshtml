@@ -43,6 +43,7 @@
                             <option name="A" value="A">Azienda</option>
                             <option name="C" value="C">Consulente</option>
                             <option name="I" value="I">Iscritto</option>
+                            <option name="M" value="M">Medico Legale</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
@@ -121,13 +122,13 @@
                 $("#Login").prop("placeholder", "Username");
             }
         });
-       
+
     </script>
-   <script>
-       $('[id$=DropLogin]').change(function () {
-           var selectedOption = $("#DropLogin option:selected").val();
-           $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
-       });
-   </script>
+    <script>
+        $('[id$=DropLogin]').change(function () {
+            var selectedOption = $("#DropLogin option:selected").val();
+            $("<input />", { type: 'hidden', name: 'idLogin' }).val(selectedOption).appendTo("form");
+        });
+    </script>
 </body>
 </html>
