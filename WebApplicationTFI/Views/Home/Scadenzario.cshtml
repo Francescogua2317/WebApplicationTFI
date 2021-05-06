@@ -10,12 +10,10 @@
     .table td {
         vertical-align: middle;
     }
-
     .table thead th {
         vertical-align: middle;
         text-align: center;
     }
-
     .input-group > .form-control {
         border-color: #0c773c;
         margin-right: 20px;
@@ -36,7 +34,7 @@
     }
 
         .applyBtn::after {
-            content: 'Vai';
+            content: 'Applica';
             background-color: #0c773c;
             color: white;
             border: 1px solid black;
@@ -176,12 +174,10 @@
                             <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
                             <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
         </div>
-
         <script>
             $(function () {
                 $('#search').on('input', function () {
@@ -195,7 +191,6 @@
                 });
 
             })
-
             function searchRow() {
                 var $rows = $('#table > tbody > tr').not(".header");
                 var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
