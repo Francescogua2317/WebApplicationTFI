@@ -36,7 +36,7 @@
     }
 
         .applyBtn::after {
-            content: 'Vai';
+            content: 'Applica';
             background-color: #0c773c;
             color: white;
             border: 1px solid black;
@@ -110,13 +110,14 @@
                             <th>Data Inizio</th>
                             <th>Data Cessazione</th>
                             <th>Tipo</th>
-                            <th>Nome Azienda</th>
+                            <th>ID Posizione</th>
+                            <th>Ragione Sociale</th>
                             <th>Motivo Cessazione</th>
                             <th>Carta Enpaia</th>
                             <th>Stato PREV</th>
                             <th>Fondo Pagato</th>
-                            <th>Liquidazione</th>
-                            <th>Modifica Anagrafica</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -126,13 +127,14 @@
                             <td>06/07/2006</td>
                             <td>06/08/2011</td>
                             <td>Ordinarie</td>
+                            <td>243</td>
                             <td>Società Agricola</td>
                             <td>Morte</td>
                             <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
                             <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
+                            <td><a title="Liquidazione" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Liquidazione.jpg" /></a></td>
+                            <td><a title="Modifica" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" > <img width="32" src="~/Images/Modifica.jpg" /></a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1235</td>
@@ -140,13 +142,14 @@
                             <td>10/08/2006</td>
                             <td>06/08/2010</td>
                             <td>Suppletive</td>
+                            <td>245</td>
                             <td>Società Agricola</td>
                             <td>Incidente</td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
                             <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
+                            <td><a title="Liquidazione" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Liquidazione.jpg" /></a></td>
+                            <td><a title="Modifica" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Modifica.jpg" /></a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1236</td>
@@ -154,13 +157,14 @@
                             <td>12/01/2007</td>
                             <td>31/04/2012</td>
                             <td>Anticipazioni</td>
+                            <td>246</td>
                             <td>Agro-Carota</td>
                             <td>Morte</td>
                             <td><a href="@Url.Action("ProspettoCartaEnpaia","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
                             <td><a href="@Url.Action("ProspettoFondo","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
+                            <td><a title="Liquidazione" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Liquidazione.jpg" /></a></td>
+                            <td><a title="Modifica" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Modifica.jpg" /></a></td>
                         </tr>
                         <tr style="vertical-align:middle;text-align:center">
                             <td>1237</td>
@@ -168,15 +172,15 @@
                             <td>12/12/2012</td>
                             <td>23/05/2017</td>
                             <td>Ordinarie</td>
+                            <td>249</td>
                             <td>Società Vinicola</td>
                             <td>Invalidità</td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
                             <td><a href="@Url.Action("ProspettoPREV","Home")"><img width="32" src="~/Images/Sign-check.jpg" /></a></td>
                             <td><a href="#"><img width="30" src="~/Images/Sign-X.png" /></a></td>
-                            <td><a type="button" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray" class="btn">Liquidazione</a></td>
-                            <td><a type="button" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray" class="btn">Modifica</a></td>
+                            <td><a title="Liquidazione" href="@Url.Action("Liquidazione", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Liquidazione.jpg" /></a></td>
+                            <td><a title="Modifica" href="@Url.Action("Anagrafica", "Home")" style="color:black;background-color:lightgray"> <img width="32" src="~/Images/Modifica.jpg" /></a></td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
