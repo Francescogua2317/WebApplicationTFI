@@ -1,8 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "RichiestaTFR";
+    ViewBag.Title = "AnticipazioneTFR";
     Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
 }
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -130,85 +132,106 @@
         </div>
         <hr />
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-9">
                 <div class="form-group">
-                    <label>Data chiusura rapporto assicurativo con ENPAIA</label>
-                    <input type="date" class="form-control" placeholder="Inserire Data Chiusura Rapporto">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Periodo Accantonamento TFR Presso:</label>
+                    <label>Motivazione Anticipazione TRF</label>
                     <select class="form-control">
-                        <option selected></option>
-                        <option></option>
+                        <option selected>--Seleziona--</option>
+                        <option>Spese sanitarie</option>
+                        <option>Acquisto di prima casa di abitazione per sé o per i figli</option>
+                        <option>Costruzione di prima casa di abitazione</option>
+                        <option>Acquisto di prima casa di abitazione in cooperativa</option>
+                        <option>Estinzione parziale o totale mutuo bancario contratto per la costruzione o l’acquisto della prima casa di abitazione</option>
+                        <option>Ristrutturazione di prima casa di abitazione</option>
+                        <option>Congedo parentale</option>
+                        <option>Formazione per il conseguimento di titoli di studio o l’accrescimento di conoscenze e competenze professionali del richiedente</option>
+
                     </select>
                 </div>
             </div>
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Periodo:</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background:#0c773c;color:white">
-                                <i class="far fa-calendar-alt"></i>
-                            </span>
-                        </div>
-                        <input type="text" class="form-control float-right" id="reservation">
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Data chiusura rapporto assicurativo con ENPAIA</label>
+                        <input type="date" class="form-control" placeholder="Inserire Data Chiusura Rapporto">
                     </div>
                 </div>
             </div>
-        </div>
-        <center><p style="font-size:20px"><strong>Modalità di Pagamento FP</strong></p></center>
-        <div class="row">
-            <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Periodo Accantonamento TFR Presso:</label>
+                        <select class="form-control">
+                            <option selected></option>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Periodo:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background:#0c773c;color:white">
+                                    <i class="far fa-calendar-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control float-right" id="reservation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center><p style="font-size:20px"><strong>Modalità di Pagamento FP</strong></p></center>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="checkbox" /><label style="font-weight:600">&nbsp;Bonifico Bancario</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>IBAN</label>
+                        <input type="text" class="form-control" placeholder="Inserire IBAN">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>BIC/SWIFT</label>
+                        <input type="text" class="form-control" placeholder="Inserire BIC/SWIFT">
+                        <p>(Solo per bonifici esteri)</p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <center><p style="font-size:20px"><strong>Modalità di Pagamento TFR </strong></p></center>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="checkbox" /><label style="font-weight:600">&nbsp;Assegno di Traenza(per importi fino a 3000euro)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="form-group">
-                    <input type="checkbox" /><label style="font-weight:600">&nbsp;Bonifico Bancario</label>
+                    <strong>Il Dipendente dichiara di aver fruito <input type="checkbox" />&emsp;di non aver fruito<input type="checkbox" />(barrare la casella interessata) nel corso del corrente anno della detrazione di imposta prevista dal DM 20 Marzo 2008 a favore dei percettori di Trattamento di Fine Rapporto con data cessazione del rapporto di lavoro successiva al 30 Marzo 2008. </strong>
 
                 </div>
             </div>
+            <br />
+            <input type="submit" class="btn" value="Salva" style="background-color:#0c773c;color:white;font-size:20px;float:right" />
         </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>IBAN</label>
-                    <input type="text" class="form-control" placeholder="Inserire IBAN">
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>BIC/SWIFT</label>
-                    <input type="text" class="form-control" placeholder="Inserire BIC/SWIFT">
-                    <p>(Solo per bonifici esteri)</p>
-                </div>
-            </div>
-        </div>
-        <br />
-        <center><p style="font-size:20px"><strong>Modalità di Pagamento TFR </strong></p></center>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <input type="checkbox" /><label style="font-weight:600">&nbsp;Assegno di Traenza(per importi fino a 3000euro)</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group">
-                <strong>Il Dipendente dichiara di aver fruito <input type="checkbox" />&emsp;di non aver fruito<input type="checkbox" />(barrare la casella interessata) nel corso del corrente anno della detrazione di imposta prevista dal DM 20 Marzo 2008 a favore dei percettori di Trattamento di Fine Rapporto con data cessazione del rapporto di lavoro successiva al 30 Marzo 2008. </strong>
-
-            </div>
-        </div>
-        <br />
-        <input type="submit" class="btn" value="Salva" style="background-color:#0c773c;color:white;font-size:20px;float:right" />
     </div>
-</div>
 
 <script>
     $(function () {
         //Date range picker
         $('#reservation').daterangepicker();
     })</script>
+
+
 
 
