@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "RichiestaContoIndividuale";
+    Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
+}
+
+<div class="card">
+    <div style="background-color:#0c773c;color:white;text-align:center;font-weight:600;font-size:20px" class="card-header">Richiesta Pagamento Conto Individuale Iscritto</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Matricola</label>
+                    <input type="text" class="form-control" value="00045678" placeholder="Inserire Matricola">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Cognome</label>
+                    <input type="text" class="form-control" value="Rossi" placeholder="Inserire Cognome">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" value="Mario" placeholder="Inserire Nome">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Codice Fiscale</label>
+                    <input type="text" class="form-control" value="RSSMRA71E05H501Q" placeholder="Inserire Codice Fiscale">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Data Nascita</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" value="05/05/1971" data-target="#reservationdate">
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Sesso</label>
+                    <select class="form-control">
+                        <option selected>M</option>
+                        <option>F</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Comune Nascita</label>
+                    <input type="text" class="form-control" value="Roma" placeholder="Inserire Comune Nascita">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Provincia Nascita</label>
+                    <input type="text" class="form-control" value="RM" placeholder="Inserire Provincia Nascita">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Stato Estero Nascita</label>
+                    <input type="text" class="form-control" placeholder="Inserire Stato Estero Nascita">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Indirizzo</label>
+                    <input type="text" class="form-control" placeholder="Inserire Indirizzo">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Comune</label>
+                    <input type="text" class="form-control" placeholder="Inserire Comune">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>CAP</label>
+                    <input type="text" class="form-control" placeholder="Inserire CAP">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Provincia</label>
+                    <input type="text" class="form-control" placeholder="Inserire Provincia">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Località</label>
+                    <input type="text" class="form-control" placeholder="Inserire Località">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Stato Estero </label>
+                    <input type="text" class="form-control" placeholder="Inserire Stato Estero">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Telefono</label>
+                    <input type="text" class="form-control" placeholder="Inserire Telefono">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Telefono2</label>
+                    <input type="text" class="form-control" placeholder="Inserire Telefono2">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Cellulare</label>
+                    <input type="text" class="form-control" placeholder="Inserire Cellulare">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Fax</label>
+                    <input type="text" class="form-control" placeholder="Inserire Fax">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Inserire Email">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>PEC</label>
+                    <input type="text" class="form-control" placeholder="Inserire PEC">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>Data chiusura rapporto assicurativo con ENPAIA</label>
+                    <input type="date" class="form-control" placeholder="Inserire Data Chiusura Rapporto">
+                </div>
+            </div>
+        </div>
+        <center><p style="font-size:20px"><strong>Modalità di Pagamento FP</strong></p></center>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <input type="checkbox" /><label style="font-weight:600">&nbsp;Bonifico Bancario</label>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>IBAN</label>
+                    <input type="text" class="form-control" placeholder="Inserire IBAN">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label>BIC/SWIFT</label>
+                    <input type="text" class="form-control" placeholder="Inserire BIC/SWIFT">
+                    <p>(Solo per bonifici esteri)</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <center><p style="font-size:20px"><strong>Modalità di Pagamento TFR </strong></p></center>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <input type="checkbox" /><label style="font-weight:600">&nbsp;Assegno di Traenza(per importi fino a 3000euro)</label>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="btn" value="Salva" style="background-color:#0c773c;color:white;font-size:20px;float:right" />
+    </div>
+    </div>
+
+
