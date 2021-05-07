@@ -6,9 +6,15 @@ using System.Web.Mvc;
 
 namespace WebApplicationTFI.Controllers
 {
-    public class HomeController : Controller
+    public class AziendaConsulenteController : Controller
     {
+        // GET: Azienda
         public ActionResult Index()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View("~/Views/Home/Index.cshtml");
+        }
+        public ActionResult EstrattoContoAzienda()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
