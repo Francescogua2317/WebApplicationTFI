@@ -45,10 +45,10 @@
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
 
-                    <a href='@Url.Action("Index", "Home")' class="nav-link primary">Home</a>
+                    <a href='@Url.Action("Index", "Iscritto")' class="nav-link primary">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href='@Url.Action("Contact", "Home")' class="nav-link primary">Contatti</a>
+                    <a href='@Url.Action("Contact", "Iscritto")' class="nav-link primary">Contatti</a>
                 </li>
             </ul>
 
@@ -184,27 +184,25 @@
                     </div>
                 </div>
 
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="@Url.Action("Anagrafica", "Home")" class="nav-link">
+                            <a href="@Url.Action("Anagrafica", "Iscritto")" class="nav-link">
                                 <i class="nav-icon fas fa-id-badge"></i>
                                 <p>Anagrafica</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("EstrattoConto", "Home")" class="nav-link">
+                            <a href="@Url.Action("EstrattoConto", "Iscritto")" class="nav-link">
                                 <i class="nav-icon fas fa-money-bill-alt"></i>
                                 <p>Estratto conto</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href='@Url.Action("CertificazioniUniche", "Iscritto")' class="nav-link ">
                                 <i class="nav-icon fas fa-file-signature"></i>
                                 <p>Certificazione unica</p>
                             </a>
@@ -219,13 +217,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href='@Url.Action("RichiestaTFR", "Iscritto")' class="nav-link primary">
                                         <i class="fas fa-file-contract nav-icon"></i>
                                         <p>TFR</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href='@Url.Action("RichiestaContoIndividuale", "Iscritto")' class="nav-link primary">
                                         <i class="fas fa-coins nav-icon"></i>
                                         <p>Fondo Conto Individuale</p>
                                     </a>
@@ -237,7 +235,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href='@Url.Action("AnticipazioneTFR", "Iscritto")' class="nav-link">
                                         <i class="fas fa-money-check-alt nav-icon"></i>
                                         <p>Anticipazione TFR</p>
                                     </a>
@@ -245,10 +243,8 @@
 
                             </ul>
                         </li>
-
-
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href='@Url.Action("ProspettiPagamento", "Iscritto")' class="nav-link ">
                                 <i class="nav-icon fas fa-search-dollar"></i>
                                 <p>Prospetti di pagamento</p>
                             </a>
@@ -260,13 +256,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href='@Url.Action("Convenzioni", "Iscritto")' class="nav-link ">
                                 <i class="nav-icon fas fa-donate"></i>
                                 <p>Convenzioni</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href='@Url.Action("Privacy", "Iscritto")' class="nav-link">
                                 <i class="nav-icon fas fa-lock"></i>
                                 <p>Privacy</p>
                             </a>
@@ -274,7 +270,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-key"></i>
-                                <p>Cambio PWD</p>
+                                <p>Recupera password</p>
                             </a>
                         </li>
                         <li class="nav-item">

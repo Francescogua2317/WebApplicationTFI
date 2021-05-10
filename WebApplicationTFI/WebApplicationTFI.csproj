@@ -233,7 +233,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AmministrativoController.cs" />
+    <Compile Include="Controllers\AziendaConsulenteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IscrittoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Models\DataLayer.cs" />
     <Compile Include="Global.asax.cs">
@@ -276,6 +280,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bnl-logo.jpg" />
+    <Content Include="Images\Download.jpg" />
     <Content Include="Images\getadobe.jpg" />
     <Content Include="Images\imgPDF.jpg" />
     <Content Include="Images\Liquidazione.jpg" />
@@ -2220,7 +2226,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Iscritto\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_IscrittoLayout.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
@@ -2228,18 +2234,26 @@
     <Content Include="Views\Shared\_AmministrativoLayout.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\_AziendaConsulenteLayout.cshtml" />
-    <Content Include="Views\Home\Anagrafica.cshtml" />
-    <Content Include="Views\Home\EstrattoConto.cshtml" />
-    <Content Include="Views\Home\Scadenzario.cshtml" />
-    <Content Include="Views\Home\Liquidazione.cshtml" />
-    <Content Include="Views\Home\ListaUtenti.cshtml" />
-    <Content Include="Views\Home\ProspettoCartaEnpaia.cshtml" />
-    <Content Include="Views\Home\ProspettoPREV.cshtml" />
-    <Content Include="Views\Home\ProspettoFondo.cshtml" />
-    <Content Include="Views\Home\EstrattoContoAzienda.cshtml" />
+    <Content Include="Views\Iscritto\Anagrafica.cshtml" />
+    <Content Include="Views\Iscritto\EstrattoConto.cshtml" />
+    <Content Include="Views\Amministrativo\Scadenzario.cshtml" />
+    <Content Include="Views\Amministrativo\Liquidazione.cshtml" />
+    <Content Include="Views\Amministrativo\ListaUtenti.cshtml" />
+    <Content Include="Views\Amministrativo\ProspettoCartaEnpaia.cshtml" />
+    <Content Include="Views\Amministrativo\ProspettoPREV.cshtml" />
+    <Content Include="Views\Amministrativo\ProspettoFondo.cshtml" />
+    <Content Include="Views\AziendaConsulente\EstrattoContoAzienda.cshtml" />
+    <Content Include="Views\Iscritto\Convenzioni.cshtml" />
+    <Content Include="Views\Iscritto\CertificazioniUniche.cshtml" />
+    <Content Include="Views\Iscritto\ProspettiPagamento.cshtml" />
+    <Content Include="Views\Iscritto\Privacy.cshtml" />
+    <Content Include="Views\Iscritto\RichiestaContoIndividuale.cshtml" />
+    <Content Include="Views\Iscritto\RichiestaTFR.cshtml" />
+    <Content Include="Views\Iscritto\AnticipazioneTFR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

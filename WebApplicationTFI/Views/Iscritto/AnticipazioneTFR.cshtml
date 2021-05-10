@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "AnticipazioneTFR";
+    Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
+}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+    .cancelBtn {
+        visibility: hidden;
+    }
+
+        .cancelBtn::after {
+            content: 'Esci';
+            visibility: visible;
+            background-color: #0c773c;
+            color: white;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+        }
+
+    .applyBtn {
+        visibility: hidden;
+    }
+
+        .applyBtn::after {
+            content: 'Applica';
+            background-color: #0c773c;
+            color: white;
+            width: 10px;
+            visibility: visible;
+            padding: 5px 10px 5px 10px;
+        }
+
+    .daterangepicker td.active, .daterangepicker td.active:hover {
+        background-color: #0c773c;
+    }
+</style>
+
+<div class="card">
+    <div style="background-color:#0c773c;color:white;text-align:center;font-weight:600;font-size:20px" class="card-header">Richiesta Pagamento TFR Iscritto</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Matricola: 00045678</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Cognome: Rossi</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Nome: Mario</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Codice Fiscale: RSSMRA71E05H501Q</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Data Nascita: 20/03/1965</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Sesso: M</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Comune Nascita: Roma</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Provincia Nascita: RM</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Stato Estero Nascita: Italia</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Indirizzo: Via Milano 23</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Comune: Roma</label>
+            </div>
+            <div class="col-sm-3">
+                <label>CAP: 00132</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Provincia: RM</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Località: Roma</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Stato Estero: Italia</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Telefono: 064523954</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Telefono2: 069432123</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Cellulare: 3477480756</label>
+            </div>
+            <div class="col-sm-3">
+                <label>Fax: 069432123</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Email: rossi.mario@gmail.com</label>
+            </div>
+            <div class="col-sm-3">
+                <label>PEC: rossi.mario@pec.it</label>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label>Motivazione Anticipazione TRF</label>
+                    <select class="form-control">
+                        <option selected>--Seleziona--</option>
+                        <option>Spese sanitarie</option>
+                        <option>Acquisto di prima casa di abitazione per sé o per i figli</option>
+                        <option>Costruzione di prima casa di abitazione</option>
+                        <option>Acquisto di prima casa di abitazione in cooperativa</option>
+                        <option>Estinzione parziale o totale mutuo bancario contratto per la costruzione o l’acquisto della prima casa di abitazione</option>
+                        <option>Ristrutturazione di prima casa di abitazione</option>
+                        <option>Congedo parentale</option>
+                        <option>Formazione per il conseguimento di titoli di studio o l’accrescimento di conoscenze e competenze professionali del richiedente</option>
+
+                    </select>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Data chiusura rapporto assicurativo con ENPAIA</label>
+                        <input type="date" class="form-control" placeholder="Inserire Data Chiusura Rapporto">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Periodo Accantonamento TFR Presso:</label>
+                        <select class="form-control">
+                            <option selected></option>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Periodo:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background:#0c773c;color:white">
+                                    <i class="far fa-calendar-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control float-right" id="reservation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center><p style="font-size:20px"><strong>Modalità di Pagamento FP</strong></p></center>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="checkbox" /><label style="font-weight:600">&nbsp;Bonifico Bancario</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>IBAN</label>
+                        <input type="text" class="form-control" placeholder="Inserire IBAN">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>BIC/SWIFT</label>
+                        <input type="text" class="form-control" placeholder="Inserire BIC/SWIFT">
+                        <p>(Solo per bonifici esteri)</p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <center><p style="font-size:20px"><strong>Modalità di Pagamento TFR </strong></p></center>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="checkbox" /><label style="font-weight:600">&nbsp;Assegno di Traenza(per importi fino a 3000euro)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <strong>Il Dipendente dichiara di aver fruito <input type="checkbox" />&emsp;di non aver fruito<input type="checkbox" />(barrare la casella interessata) nel corso del corrente anno della detrazione di imposta prevista dal DM 20 Marzo 2008 a favore dei percettori di Trattamento di Fine Rapporto con data cessazione del rapporto di lavoro successiva al 30 Marzo 2008. </strong>
+
+                </div>
+            </div>
+            <br />
+            <input type="submit" class="btn" value="Salva" style="background-color:#0c773c;color:white;font-size:20px;float:right" />
+        </div>
+    </div>
+
+<script>
+    $(function () {
+        //Date range picker
+        $('#reservation').daterangepicker();
+    })</script>
+
+
+
+
