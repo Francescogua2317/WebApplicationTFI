@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using IBM.Data.DB2.iSeries;
@@ -29,17 +30,21 @@ namespace WebApplicationTFI.Controllers
             string selected = Request.Form["DropLogin"];
             string login = Request.Form["Login"];
             string pwd = Request.Form["Password"];
+            if (selected == "I")
+            {
+                if (VerifyLoginISCRITTO(login, pwd, selected))
+                {
 
-            //if (u.LoginUtente(login, pwd, selected))
-            //{
-/*
-A   = Azienda
-C   = Consulente
-E   = Enpaia
-I   = Iscritto
-P   = 
-S   = 
-*/
+                }
+            }
+    /*
+    A   = Azienda
+    C   = Consulente
+    E   = Enpaia
+    I   = Iscritto
+    P   = 
+    S   = 
+    */
                 if (selected.EndsWith("I"))
                 {
                     Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
@@ -117,6 +122,35 @@ S   =
             strValue = strValue.Replace("'", "''");
             strValue = "'" + strValue.Trim() + "'";
             return strValue;
+        }
+
+
+        private bool VerifyLoginISCRITTO(string user, string pwd, string tipoUte)
+        {
+            DataLayer objDataAccess = new DataLayer();
+            StringBuilder sb = new StringBuilder();
+            string strSQL;
+            DataSet objDsUte = new DataSet();
+            string errore = "";
+            sb.Append(" SELECT ");
+            sb.Append(" I.MAT, I.COGNOME, I.NOME, I.CODFIS, U.CODTIPUTE, UP.DATINI, UP.DATFIN ");
+            sb.Append(" FROM UTENTI U, UTEPIN UP, ISCTWEB I ");
+            sb.Append(" WHERE U.CODFIS = I.CODFIS ");
+            sb.Append(" AND U.CODUTE = UP.CODUTE ");
+            sb.Append(" AND UP.CODUTE = '" + user + "' ");
+            //sb.Append(" AND UP.PIN = '" + pwd + "' ");
+            sb.Append(" AND UP.STAPIN ='A' ");
+
+            objDsUte = objDataAccess.GetDataSet(sb.ToString(), ref errore);
+
+            if (Utente.queryOk(objDsUte))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private bool VerifyLogin(string user, string pwd, string tipoUte)
