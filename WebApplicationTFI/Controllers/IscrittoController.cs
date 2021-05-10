@@ -19,7 +19,7 @@ namespace WebApplicationTFI.Controllers
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             if (Session["layout"].ToString() == "~/Views/Shared/_AmministrativoLayout.cshtml")
             {
-                return View("~/Views/Home/Anagrafica.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
+                return View("~/Views/Iscritto/Anagrafica.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
             }
             else
             {
