@@ -30,10 +30,14 @@ namespace WebApplicationTFI.Controllers
             {
                 return View();        
             }
-       
-        }
 
+        }
         public ActionResult EstrattoConto()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult EstrattoContoAzienda()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
@@ -46,11 +50,7 @@ namespace WebApplicationTFI.Controllers
             return View();
         }
 
-        public ActionResult ScadenzarioFondo()
-        {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
-            return View();
-        }
+       
         public ActionResult Liquidazione()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
@@ -61,6 +61,20 @@ namespace WebApplicationTFI.Controllers
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
-
+        public ActionResult ProspettoCartaEnpaia()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult ProspettoPREV()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult ProspettoFondo()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
     }
 }
