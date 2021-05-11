@@ -19,19 +19,19 @@
                             <div class="col-sm-2">
                                 <div class="form-group">
                                     <label>Matricola</label>
-                                    <input type="text" class="form-control" value="00045678" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["Matricola"]" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label>Nominativo</label>
-                                    <input type="text" class="form-control" value=" Mario Rossi" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["NomeCognome"]" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label>Codice Fiscale</label>
-                                    <input type="text" class="form-control" value="RSSMRA71E05H501Q" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["CodiceFis"]" disabled>
                                 </div>
                             </div>
                         </div>
@@ -39,27 +39,27 @@
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label>Comune</label>
-                                    <input type="text" class="form-control" value="Roma" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["Comune2"]" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label>Indirizzo</label>
-                                    <input type="text" class="form-control" value="Via Sermoneta 14,F" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["Indirizzo"]" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-group">
                                     <label>CAP</label>
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" value="00042" disabled>
+                                        <input type="text" class="form-control datetimepicker-input" value="@ViewData["Cap"]" disabled>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-group">
                                     <label>Provincia</label>
-                                    <input type="text" class="form-control" value="RM" disabled>
+                                    <input type="text" class="form-control" value="@ViewData["Provincia2"]" disabled>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
         </div>
     </section>
     <h4 style="text-align:center;font-weight:600;font-size:15px">Per una corretta visualizzazione degli Estratti Conto scaricare la versione Acrobat Reader 20.xx</h4>
-    <center> <a href="https://get.adobe.com/it/reader/"><img width="100" src="~/Images/getadobe.jpg" /></a></center>
+    <center> <a href="https://get.adobe.com/it/reader/" target="_blank"><img width="100" src="~/Images/getadobe.jpg" /></a></center>
 
 
 

@@ -113,6 +113,48 @@ namespace WebApplicationTFI.Controllers
         public ActionResult EstrattoConto()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+
+            string codfis = Session["CodiceFiscale"].ToString();
+            DataLayer objDataAccess = new DataLayer();
+            string strSQL = "SELECT MAT, COGNOME, NOME, CODFIS, IND, NUMCIV, CAP, DENLOC, SIGPRO FROM ISCTWEB WHERE CODFIS='" + codfis + "'";
+
+
+            DataSet objAnagrafica = new DataSet();
+
+
+            string errore = "";
+            objAnagrafica = objDataAccess.GetDataSet(strSQL, ref errore);
+
+
+            string mat = objAnagrafica.Tables[0].Rows[0]["MAT"].ToString();
+            string nome = objAnagrafica.Tables[0].Rows[0]["NOME"].ToString();
+            string cognome = objAnagrafica.Tables[0].Rows[0]["COGNOME"].ToString();
+            string codiceFiscale = objAnagrafica.Tables[0].Rows[0]["CODFIS"].ToString();
+           
+            string indirizzo = objAnagrafica.Tables[0].Rows[0]["IND"].ToString();
+            string numeroCivico = objAnagrafica.Tables[0].Rows[0]["NUMCIV"].ToString();
+            string cap = objAnagrafica.Tables[0].Rows[0]["CAP"].ToString();
+            string comune = objAnagrafica.Tables[0].Rows[0]["DENLOC"].ToString();
+            string sigpro2 = objAnagrafica.Tables[0].Rows[0]["SIGPRO"].ToString();
+          
+
+
+
+
+
+            if (Utente.queryOk(objAnagrafica))
+            {
+                ViewData["Matricola"] = mat;
+                ViewData["NomeCognome"] = nome+" "+cognome;
+                ViewData["CodiceFis"] = codiceFiscale;
+                ViewData["Indirizzo"] = "Via "+indirizzo+" "+numeroCivico;
+                ViewData["Cap"] = cap;
+                ViewData["Comune2"] = comune;
+                ViewData["Provincia2"] = sigpro2;
+             
+            }
+
+
             return View();
         }
 
