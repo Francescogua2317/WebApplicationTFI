@@ -183,12 +183,12 @@
                         <a href="#" name="Utente" class="d-block">@ViewBag.NomeUtente</a>
                     </div>
                 </div>
-
+                <p name="CodiceFiscale" style="visibility:hidden;height:0">@ViewBag.CodiceFiscale</p>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
+            with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="@Url.Action("Anagrafica", "Iscritto")" class="nav-link">
                                 <i class="nav-icon fas fa-id-badge"></i>
