@@ -154,7 +154,7 @@ namespace WebApplicationTFI.Controllers
                 ViewData["Matricola"] = mat;
                 ViewData["Nominativo"] = nome+ " " + cognome;
                 ViewData["CodiceFis"] = codiceFiscale;
-                ViewData["Indirizzo"] ="Via"+ " " + indirizzo + " " + numeroCivico;               
+                ViewData["Indirizzo"] ="Via " + indirizzo + " " + numeroCivico;               
                 ViewData["Cap"] = cap;
                 ViewData["Comune"] = comune;
                 ViewData["Provincia"] = sigpro;  
