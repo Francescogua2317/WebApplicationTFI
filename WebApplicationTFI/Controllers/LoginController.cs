@@ -34,7 +34,23 @@ namespace WebApplicationTFI.Controllers
             {
                 if (VerifyLoginISCRITTO(login, pwd, selected))
                 {
+                    DataLayer objDataAccess = new DataLayer();
+                    string strSQL= "SELECT I.NOME, I.COGNOME FROM ISCTWEB I WHERE I.CODFIS='"+login+"'";
+                    DataSet objNominativo=new DataSet();
+                    string errore = "";
+                    objNominativo = objDataAccess.GetDataSet(strSQL, ref errore);
+                   string nome= objNominativo.Tables[0].Rows[0]["NOME"].ToString();
+                    string cognome = objNominativo.Tables[0].Rows[0]["COGNOME"].ToString();
 
+                    if (Utente.queryOk(objNominativo))
+                    {
+                        Session["NomeUtente"] = ViewBag.NomeUtente = nome+" "+cognome;
+                        Session["CodiceFiscale"] = ViewBag.CodiceFiscale = login;
+                    }
+                    else
+                    {
+                        Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                    }
                 }
             }
     /*
@@ -47,7 +63,7 @@ namespace WebApplicationTFI.Controllers
     */
                 if (selected.EndsWith("I"))
                 {
-                    Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                //   Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
                     //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_IscrittoLayout.cshtml";
 
