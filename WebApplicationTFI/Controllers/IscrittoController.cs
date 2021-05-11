@@ -57,29 +57,9 @@ namespace WebApplicationTFI.Controllers
             string emailCert = objAnagrafica2.Tables[0].Rows[0]["EMAILCERT"].ToString();
             string cellulare = objAnagrafica2.Tables[0].Rows[0]["CELL"].ToString();
            
-           
-
-
-
             if (Utente.queryOk(objAnagrafica2))
             {
-                if (statoEsteroNascita == "")
-                {
-                    string dencom = objAnagrafica.Tables[0].Rows[0]["DENCOM"].ToString();
-                    string sigpro = objAnagrafica.Tables[0].Rows[0]["SIGPRO"].ToString();
-                    ViewData["Comune"] = dencom;
-                    ViewData["Provincia"] = sigpro;
-                }
-                else
-                {
-                    string strSQL4 = "SELECT C.SIGPRO, C.DENCOM, C.CODCOM FROM COM_ESTERO C, ISCTWEB I WHERE I.CODCOMNAS=C.CODCOM AND I.CODFIS='" + codfis + "'";
-                    DataSet objAnagrafica4 = new DataSet();
-                    objAnagrafica4 = objDataAccess.GetDataSet(strSQL4, ref errore);
-                    string comuneEstero = objAnagrafica4.Tables[0].Rows[0]["DENCOM"].ToString();
-                    string provinciaEstero = objAnagrafica4.Tables[0].Rows[0]["SIGPRO"].ToString();
-                    ViewData["Comune"] = comuneEstero;
-                    ViewData["Provincia"] = provinciaEstero;
-                }
+                
                 ViewData["Matricola"] = mat;
                 ViewData["Cognome"] = cognome;
                 ViewData["Nome"] = nome;
@@ -98,14 +78,9 @@ namespace WebApplicationTFI.Controllers
                 ViewData["Cellulare"] = cellulare;
                 
             }
-            if (Session["layout"].ToString() == "~/Views/Shared/_AmministrativoLayout.cshtml")
-            {
-                return View("~/Views/Iscritto/Anagrafica.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
-            }
-            else
-            {
+   
                 return View();
-            }
+            
 
            
 
