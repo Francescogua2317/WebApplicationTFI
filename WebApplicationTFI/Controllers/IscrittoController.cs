@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace WebApplicationTFI.Controllers
-{
+{ 
     public class IscrittoController : Controller
     {
         // GET: Iscritto
