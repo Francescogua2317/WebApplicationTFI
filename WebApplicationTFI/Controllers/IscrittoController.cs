@@ -45,7 +45,7 @@ namespace WebApplicationTFI.Controllers
             string cognome = objAnagrafica2.Tables[0].Rows[0]["COGNOME"].ToString();
             string codiceFiscale = objAnagrafica2.Tables[0].Rows[0]["CODFIS"].ToString();
             string sesso = objAnagrafica2.Tables[0].Rows[0]["SES"].ToString();
-            string dataNascita= objAnagrafica2.Tables[0].Rows[0]["DATNAS"].ToString();
+            string dataNascita= objAnagrafica2.Tables[0].Rows[0]["DATNAS"].ToString().Substring(0, 10);
             string statoEsteroNascita = objAnagrafica2.Tables[0].Rows[0]["STAESTNAS"].ToString();
             string titoloStudio = objAnagrafica3.Tables[0].Rows[0]["DENTITSTU"].ToString();
             string indirizzo = objAnagrafica2.Tables[0].Rows[0]["IND"].ToString();
