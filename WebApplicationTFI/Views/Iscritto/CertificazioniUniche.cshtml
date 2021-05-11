@@ -14,7 +14,7 @@
             <div class="col-sm-2">
                 <div class="form-group">
                     <label>Matricola</label>
-                    <input type="text" class="form-control" value="00045678" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Matricola"]" disabled>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Nominativo</label>
-                    <input type="text" class="form-control" value="Mario Rossi" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Nominativo"]" disabled>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Codice Fiscale</label>
-                    <input type="text" class="form-control" value="RSSMRA71E05H501Q" disabled>
+                    <input type="text" class="form-control" value="@ViewData["CodiceFis"]" disabled>
                 </div>
             </div>
         </div>
@@ -38,14 +38,14 @@
             <div class="col-sm-2">
                 <div class="form-group">
                     <label>Indirizzo</label>
-                    <input type="text" class="form-control" value="Via SantaMaria 7,A" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Indirizzo"]" disabled>
                 </div>
             </div>
 
             <div class="col-sm-2">
                 <div class="form-group">
                     <label>CAP</label>
-                    <input type="text" class="form-control" value="00042" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Cap"]" disabled>
                 </div>
             </div>
         </div>
@@ -53,13 +53,13 @@
             <div class="col-sm-2">
                 <div class="form-group">
                     <label>Comune</label>
-                    <input type="text" class="form-control" value="Roma" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Comune"]" disabled>
                 </div>
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Provincia</label>
-                    <input type="text" class="form-control" value="RM" placeholder="Inserire Provincia" disabled>
+                    <input type="text" class="form-control" value="@ViewData["Provincia"]" placeholder="Inserire Provincia" disabled>
                 </div>
             </div>
         </div>
