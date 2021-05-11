@@ -20,6 +20,12 @@ namespace WebApplicationTFI.Controllers
 
             return View();
         }
+        public ActionResult Scadenzario_Infortuni()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+
+            return View();
+        }
 
 
         public ActionResult Liquidazione()

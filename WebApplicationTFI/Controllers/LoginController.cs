@@ -63,7 +63,7 @@ namespace WebApplicationTFI.Controllers
     */
                 if (selected.EndsWith("I"))
                 {
-                //   Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                  Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
                     //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_IscrittoLayout.cshtml";
 
