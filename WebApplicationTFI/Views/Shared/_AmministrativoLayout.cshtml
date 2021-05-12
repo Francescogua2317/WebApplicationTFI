@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <style>
+        [class*=sidebar-dark-] .sidebar a {
+            color: whitesmoke;
+        }
+    </style>
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -162,7 +169,7 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-               
+
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -178,7 +185,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Images/user.png" class="img-circle elevation-2" alt="Admin Image"/>
+                        <img src="~/Images/user.png" class="img-circle elevation-2" alt="Admin Image" />
                     </div>
                     <div class="info">
                         <a href="#" name="Utente" class="d-block">@ViewBag.NomeUtente</a>
@@ -189,7 +196,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -484,7 +491,7 @@
 
                             </a>
                         </li>
-</nav>
+                </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
