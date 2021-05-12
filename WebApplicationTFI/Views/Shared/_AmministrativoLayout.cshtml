@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <style>
+        [class*=sidebar-dark-] .sidebar a {
+            color: whitesmoke;
+        }
+    </style>
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -162,7 +169,7 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-               
+
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -178,7 +185,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Images/user.png" class="img-circle elevation-2" alt="Admin Image"/>
+                        <img src="~/Images/user.png" class="img-circle elevation-2" alt="Admin Image" />
                     </div>
                     <div class="info">
                         <a href="#" name="Utente" class="d-block">@ViewBag.NomeUtente</a>
@@ -187,9 +194,9 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -260,7 +267,7 @@
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <i class="fas fa-money-check-alt nav-icon"></i>
-                                        <p>Variazioni inquadramento</p>
+                                        <p>Var.ni inquadramento</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -312,7 +319,7 @@
                             <a href="#" class="nav-link">
                                 <i class="fas fa-coins nav-icon"></i>
                                 <p>
-                                    FONDO DI PREVIDENZA
+                                    FONDO PREVIDENZA
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -392,7 +399,7 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-coins"></i>
-                                        <p>Simulazione liquidazione VIRTUALE</p>
+                                        <p>Simulazione</p>
                                     </a>
                                 </li>
                             </ul>
@@ -407,7 +414,6 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <i class="fas fa-city nav-icon"></i>
@@ -426,14 +432,54 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-ambulance"></i>
                                 <p>INFORTUNI</p>
+                                <i class="fas fa-angle-left right"></i>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Scadenzario_Infortuni", "Amministrativo")" class="nav-link">
+                                        <i class="nav-icon fas fa-calendar-times"></i>
+                                        <p>Scadenzario</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-paste nav-icon"></i>
+                                        <p>Lista liquidazioni</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-file-invoice-dollar nav-icon"></i>
+                                        <p>Lista di pagamento</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <p>Elenco di pagamento</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-chart-pie nav-icon"></i>
+                                        <p>Report Statistici</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-cogs nav-icon"></i>
+                                        <p>Parametri</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
 
                             <a href='@Url.Action("ListaUtenti", "Amministrativo")' class="nav-link primary">
 
                                 <i class="nav-icon fas fa-id-badge"></i>
-                                <p>ANAGRAFICA ISCRITTO</p>
+                                <p>ANAGRAFICA ISCRITTI</p>
                             </a>
 
                         </li>
@@ -445,7 +491,7 @@
 
                             </a>
                         </li>
-</nav>
+                </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

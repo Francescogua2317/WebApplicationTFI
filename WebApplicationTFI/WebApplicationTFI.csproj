@@ -2250,6 +2250,7 @@
     <Content Include="Views\Iscritto\RichiestaContoIndividuale.cshtml" />
     <Content Include="Views\Iscritto\RichiestaTFR.cshtml" />
     <Content Include="Views\Iscritto\AnticipazioneTFR.cshtml" />
+    <Content Include="Views\Amministrativo\Scadenzario_Infortuni.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
