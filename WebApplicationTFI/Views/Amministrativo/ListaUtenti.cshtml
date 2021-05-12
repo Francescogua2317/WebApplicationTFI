@@ -4,6 +4,12 @@
     Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
 <style>
     .table thead th {
         background: #0c773c;
@@ -11,14 +17,45 @@
         text-align: center;
         vertical-align: middle;
     }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+    .input-group > .form-control {
+        border-color: #0c773c;
+        margin-right: 20px;
+    }
 </style>
 
-<div class="card">
+<div class="card" style="background-color:white">
     <div class="card-body">
-        <h3>Lista Utenti</h3>
-        <table id="tblRDL" class="table table-bordered table-hover table-striped">
+        <div class="input-group">
+            <div class="form-group" style="margin-left:380px">
+                <label>Matricola:</label>
+                <div class="input-group">
+                    <input class="form-control" id="searchMat" placeholder="Ricerca per matricola..." autocomplete="off" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nominativo:</label>
+                <div class="input-group">
+                    <input class="form-control" id="search" placeholder="Ricerca per nominativo..." autocomplete="off" autofocus>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div style="background-color: #0c773c" class="card-header">
+        <h2 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Lista Utenti</h2>
+    </div>
+    <div class="card-body">
+        <table id="table" class="table table-bordered table-hover table-striped">
             <thead>
-                <tr>
+                <tr class="header">
                     <th>Matricola</th>
                     <th>Nominativo</th>
                     <th>Codice Fiscale</th>
@@ -41,7 +78,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary btn-lg " href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -54,7 +91,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Iscritto")' />Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary btn-lg " href='@Url.Action("Anagrafica", "Amministrativo")' />Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -67,7 +104,7 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary btn-lg " href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
                 </tr>
                 <tr>
                     <td>1237</td>
@@ -79,11 +116,40 @@
                     <td>RM</td>
                     <td>Italia</td>
 
-                    <td><a type="button" style="color:black;background-color:lightgray" class="btn" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary btn-lg " href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+<script>
+
+    $(function () {
+        $('#search').on('input', function () {
+            searchRow();
+        });
+        $('#searchMat').on('input', function () {
+            searchRow();
+        });
+
+
+    })
+    function searchRow() {
+        var $rows = $('#table > tbody > tr').not(".header");
+        var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
+
+        var val2 = $.trim($('#searchMat').val()).replace(' ').toLowerCase();
+
+
+
+        $rows.show().filter(function () {
+            var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
+            var text2 = $(this).find('td:nth-child(1)').text().replace(' ').toLowerCase();
+
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2);
+        }).hide();
+    }
+
+</script>
 
 
