@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "DettaglioInfortuni";
+    Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
+}
+
+<div class="card card-default">
+    <div style="background-color: #0c773c" class="card-header">
+        <h3 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Scheda dettaglio infortunio di @ViewBag.NomeUtente</h3>
+    </div>
+    <!---->
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Id Infortunio</label>
+                    <input type="text" class="form-control" value="14" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Descrizione</label>
+                    <input type="text" class="form-control" value="Rossi" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Data infortunio</label>
+                    <input type="text" class="form-control" value="Mario" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Data denuncia infortunio</label>
+                    <input type="text" class="form-control" value="NSTNCL58R23H3401" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Data fine convalescenza</label>
+                    <input type="text" class="form-control" value="02/03/1946" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Stato</label>
+                    <input type="text" class="form-control" value="NSTNCL58R23H3401" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Posizione Azienda</label>
+                    <input type="text" class="form-control" value="Roma" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Ragione Sociale Azienda</label>
+                    <input type="text" class="form-control" value="RM" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Id Rapporto di Lavoro</label>
+                    <input type="text" class="form-control" value="27" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Descrizione Rapporto di Lavoro</label>
+                    <input type="text" class="form-control" value="C" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Numero totale Giorni di ricovero</label>
+                    <input type="text" class="form-control" value="20" disabled>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Numero totale giorni Convalescenza</label>
+                    <input type="text" class="form-control" value="20" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Data Inizio Rapporto di Lavoro</label>
+                        <input type="text" class="form-control" value="02/03/1946" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Data Fine Rapporto di Lavoro</label>
+                        <input type="text" class="form-control" value="02/03/1946" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Data Ricovero</label>
+                        <input type="text" class="form-control" value="02/03/1946" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Data Fine Ricovero</label>
+                        <input type="text" class="form-control" value="02/03/1946" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .table th {
+        text-align: center;
+    }
+</style>
+
+<div class="card">
+    <div style="background-color: #0c773c" class="card-header">
+        <h3 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Lista Certificati Medici</h3>
+    </div>
+    <div class="card-body">
+        <table id="table" class="table table-hover table-striped">
+            <thead>
+                <tr class="header" style="background:#0c773c;color:white">
+                    <th>Data Certificato</th>
+                    <th>Nominativo Medico</th>
+                    <th>Numero Giorni Convalescenza</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>06/07/2006</td>
+                    <td>A</td>
+                    <td>5</td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>06/07/2006</td>
+                    <td>B</td>
+                    <td>18</td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>06/07/2006</td>
+                    <td>C</td>
+                    <td>10</td>
+                </tr>
+                <tr style="vertical-align:middle;text-align:center">
+                    <td>06/07/2006</td>
+                    <td>D</td>
+                    <td>20</td>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+
+<div class="card card-default">
+    <div class="card-header" style="background-color:#0c773c;color:white;text-align:center;font-size:25px">Documentazione</div>
+    <div class="card-body">
+        <div class="row justify-content-center">
+            <div class="col-sm-3 ">
+                <label style="vertical-align:middle">Tipo Documentazione:</label>
+                <div class="form-group">
+                    <select class="form-control" style="border-color: #28a753">
+                        <option selected>Referto PS</option>
+                        <option>Scheda ricovero</option>
+                        <option>Scheda Dimissione Ospedaliera</option>
+                        <option>Certificato medico</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <label></label>
+                <input type="file" class="btn btn-block btn-outline-success btn-lg">
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
