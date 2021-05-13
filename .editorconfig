@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0162: È stato rilevato codice non raggiungibile
+dotnet_diagnostic.CS0162.severity = none
