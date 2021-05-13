@@ -2251,6 +2251,7 @@
     <Content Include="Views\Iscritto\RichiestaTFR.cshtml" />
     <Content Include="Views\Iscritto\AnticipazioneTFR.cshtml" />
     <Content Include="Views\Amministrativo\Scadenzario_Infortuni.cshtml" />
+    <Content Include="Views\Amministrativo\Anagrafica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
