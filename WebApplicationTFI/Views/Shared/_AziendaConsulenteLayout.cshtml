@@ -28,6 +28,18 @@
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <style>
+        [class*=sidebar-dark-] .sidebar a 
+        {
+            color: whitesmoke;
+        }
+        [class*=sidebar-dark-] .nav-sidebar > .nav-item > .nav-treeview a 
+        {
+            color: whitesmoke;
+        }
+    </style>
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -191,7 +203,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="@Url.Action("EstrattoContoAzienda", "AziendaConsulente")" class="nav-link">

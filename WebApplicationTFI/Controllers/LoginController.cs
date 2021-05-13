@@ -30,29 +30,29 @@ namespace WebApplicationTFI.Controllers
             string selected = Request.Form["DropLogin"];
             string login = Request.Form["Login"];
             string pwd = Request.Form["Password"];
-            if (selected == "I")
-            {
-                if (VerifyLoginISCRITTO(login, pwd, selected))
-                {
-                    DataLayer objDataAccess = new DataLayer();
-                    string strSQL= "SELECT I.NOME, I.COGNOME FROM ISCTWEB I WHERE I.CODFIS='"+login+"'";
-                    DataSet objNominativo=new DataSet();
-                    string errore = "";
-                    objNominativo = objDataAccess.GetDataSet(strSQL, ref errore);
-                   string nome= objNominativo.Tables[0].Rows[0]["NOME"].ToString();
-                    string cognome = objNominativo.Tables[0].Rows[0]["COGNOME"].ToString();
+            //if (selected == "I")
+            //{
+            //    if (VerifyLoginISCRITTO(login, pwd, selected))
+            //    {
+            //        DataLayer objDataAccess = new DataLayer();
+            //        string strSQL= "SELECT I.NOME, I.COGNOME FROM ISCTWEB I WHERE I.CODFIS='"+login+"'";
+            //        DataSet objNominativo=new DataSet();
+            //        string errore = "";
+            //        objNominativo = objDataAccess.GetDataSet(strSQL, ref errore);
+            //       string nome= objNominativo.Tables[0].Rows[0]["NOME"].ToString();
+            //        string cognome = objNominativo.Tables[0].Rows[0]["COGNOME"].ToString();
 
-                    if (Utente.queryOk(objNominativo))
-                    {
-                        Session["NomeUtente"] = ViewBag.NomeUtente = nome+" "+cognome;
-                        Session["CodiceFiscale"] = ViewBag.CodiceFiscale = login;
-                    }
-                    else
-                    {
-                        Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
-                    }
-                }
-            }
+            //        if (Utente.queryOk(objNominativo))
+            //        {
+            //            Session["NomeUtente"] = ViewBag.NomeUtente = nome+" "+cognome;
+            //            Session["CodiceFiscale"] = ViewBag.CodiceFiscale = login;
+            //        }
+            //        else
+            //        {
+            //            Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+            //        }
+            //    }
+            //}
     /*
     A   = Azienda
     C   = Consulente
@@ -63,7 +63,7 @@ namespace WebApplicationTFI.Controllers
     */
                 if (selected.EndsWith("I"))
                 {
-                //   Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
+                  Session["NomeUtente"] = ViewBag.NomeUtente = "Utente ISCRITTO";
                     //Session["utente"] = u;
                     Session["layout"] = "~/Views/Shared/_IscrittoLayout.cshtml";
 
@@ -141,33 +141,33 @@ namespace WebApplicationTFI.Controllers
         }
 
 
-        private bool VerifyLoginISCRITTO(string user, string pwd, string tipoUte)
-        {
-            DataLayer objDataAccess = new DataLayer();
-            StringBuilder sb = new StringBuilder();
-            string strSQL;
-            DataSet objDsUte = new DataSet();
-            string errore = "";
-            sb.Append(" SELECT ");
-            sb.Append(" I.MAT, I.COGNOME, I.NOME, I.CODFIS, U.CODTIPUTE, UP.DATINI, UP.DATFIN ");
-            sb.Append(" FROM UTENTI U, UTEPIN UP, ISCTWEB I ");
-            sb.Append(" WHERE U.CODFIS = I.CODFIS ");
-            sb.Append(" AND U.CODUTE = UP.CODUTE ");
-            sb.Append(" AND UP.CODUTE = '" + user + "' ");
-            //sb.Append(" AND UP.PIN = '" + pwd + "' ");
-            sb.Append(" AND UP.STAPIN ='A' ");
+        //private bool VerifyLoginISCRITTO(string user, string pwd, string tipoUte)
+        //{
+        //    DataLayer objDataAccess = new DataLayer();
+        //    StringBuilder sb = new StringBuilder();
+        //    string strSQL;
+        //    DataSet objDsUte = new DataSet();
+        //    string errore = "";
+        //    sb.Append(" SELECT ");
+        //    sb.Append(" I.MAT, I.COGNOME, I.NOME, I.CODFIS, U.CODTIPUTE, UP.DATINI, UP.DATFIN ");
+        //    sb.Append(" FROM UTENTI U, UTEPIN UP, ISCTWEB I ");
+        //    sb.Append(" WHERE U.CODFIS = I.CODFIS ");
+        //    sb.Append(" AND U.CODUTE = UP.CODUTE ");
+        //    sb.Append(" AND UP.CODUTE = '" + user + "' ");
+        //    //sb.Append(" AND UP.PIN = '" + pwd + "' ");
+        //    sb.Append(" AND UP.STAPIN ='A' ");
 
-            objDsUte = objDataAccess.GetDataSet(sb.ToString(), ref errore);
+        //    objDsUte = objDataAccess.GetDataSet(sb.ToString(), ref errore);
 
-            if (Utente.queryOk(objDsUte))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //    if (Utente.queryOk(objDsUte))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         private bool VerifyLogin(string user, string pwd, string tipoUte)
         {

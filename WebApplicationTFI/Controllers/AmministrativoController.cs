@@ -20,6 +20,12 @@ namespace WebApplicationTFI.Controllers
 
             return View();
         }
+        public ActionResult Scadenzario_Infortuni()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+
+            return View();
+        }
 
 
         public ActionResult Liquidazione()
@@ -43,6 +49,11 @@ namespace WebApplicationTFI.Controllers
             return View();
         }
         public ActionResult ProspettoFondo()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult Anagrafica() 
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();

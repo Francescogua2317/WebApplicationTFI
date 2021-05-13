@@ -282,8 +282,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\bnl-logo.jpg" />
     <Content Include="Images\Download.jpg" />
-    <Content Include="Images\getadobe.jpg" />
-    <Content Include="Images\imgPDF.jpg" />
+    <Content Include="Images\getadober.jpg" />
+    <Content Include="Images\imgPDFr.jpg" />
     <Content Include="Images\Liquidazione.jpg" />
     <Content Include="Images\Logo-Fondazione-Enpaia.jpg" />
     <Content Include="Images\Modifica.jpg" />
@@ -2253,6 +2253,9 @@
     <Content Include="Views\Iscritto\RichiestaContoIndividuale.cshtml" />
     <Content Include="Views\Iscritto\RichiestaTFR.cshtml" />
     <Content Include="Views\Iscritto\AnticipazioneTFR.cshtml" />
+    <Content Include="Views\Amministrativo\Scadenzario_Infortuni.cshtml" />
+    <Content Include="Views\Amministrativo\Anagrafica.cshtml" />
+    <Content Include="Views\Iscritto\Infortuni.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
