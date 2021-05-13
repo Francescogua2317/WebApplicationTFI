@@ -4,68 +4,148 @@
     Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
 }
 
-<div class="card card-default">
-    <div style="background-color: #0c773c" class="card-header">
-        <h3 style="color:white;text-align:center;width:100%;font-size:20px" class="card-title">Dati Matricola</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
+<section class="content">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <label>Matricola</label>
-                    <input type="text" class="form-control" value="@ViewData["Matricola"]" disabled>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Nominativo</label>
-                    <input type="text" class="form-control" value="@ViewData["Nominativo"]" disabled>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Codice Fiscale</label>
-                    <input type="text" class="form-control" value="@ViewData["Codicefis"]" disabled>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <label>Indirizzo</label>
-                    <input type="text" class="form-control" value="@ViewData["Indirizzo"]" disabled>
-                </div>
-            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header" style="background: #0c773c;text-align: center;width: 100%;color: white;font-size: 25px">
+                        Dati Matricola
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Matricola</label>
+                                    <input type="text" class="form-control" value="0123456" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label>Nominativo</label>
+                                    <input type="text" class="form-control" value="Mario Rossi" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label>Codice Fiscale</label>
+                                    <input type="text" class="form-control" value="NSTNCL58R23H3401" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>Comune</label>
+                                    <input type="text" class="form-control" value="Roma" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label>Indirizzo</label>
+                                    <input type="text" class="form-control" value="Via Milano 1" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>CAP</label>
 
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <label>CAP</label>
-                    <input type="text" class="form-control" value="@ViewData["Cap"]" disabled>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <label>Comune</label>
-                    <input type="text" class="form-control" value="@ViewData["Comune"]" disabled>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Provincia</label>
-                    <input type="text" class="form-control" value="@ViewData["Provincia"]" placeholder="Inserire Provincia" disabled>
+                                    <input type="text" class="form-control datetimepicker-input" value="00132" disabled>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Provincia</label>
+                                    <input type="text" class="form-control" value="RM" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="background:#0c773c;color:white;width:50%;text-align:center">Anno</th>
+                                    <th style="background:#0c773c;color:white;width:50%;text-align:center">Prospetti di Pagamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2020</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2019</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2018</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2017</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2016</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2015</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2014</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2013</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;vertical-align:middle">2012</td>
+                                    <td>
+                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h4 style="text-align:center;font-weight:600;font-size:15px">Per una corretta visualizzazione dei Prospetti di Pagamento scaricare la versione Acrobat Reader 20.xx</h4>
+<center> <a href="https://get.adobe.com/it/reader/" target="_blank"><img width="100" src="~/Images/getadober.jpg" /></a></center>
 <br />
-<br />
-<center> <p style="color:#0c773c;font-size:20px">Non risultano lettere di liquidazione per questa matricola.</p></center>
 
