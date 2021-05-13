@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
 }
 
+
 <div class="card card-default">
     <div style="background-color: #0c773c" class="card-header">
         <h3 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Scheda dettaglio infortunio di @ViewBag.NomeUtente</h3>
@@ -159,7 +160,7 @@
             </tbody>
         </table>
     </div>
-    
+
 
 </div>
 
@@ -178,14 +179,25 @@
                     </select>
                 </div>
             </div>
-            
             <div class="col-sm-4">
                 <label></label>
-                <input type="file" class="btn btn-block btn-outline-success btn-lg">
+                <div style="margin-top:8px" class="btn-group w-100">
+                    <span class="btn btn-success col fileinput-button">
+                        <i class="fas fa-plus"></i>
+                        <span>Aggiungi file</span>
+                    </span>
+                    &emsp;
+                    <button type="submit" class="btn btn-success col start">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload documenti</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <br />
+
+
 
 
