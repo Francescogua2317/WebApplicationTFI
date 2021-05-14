@@ -2259,6 +2259,10 @@
     <Content Include="Views\Iscritto\DettaglioInfortuni.cshtml" />
     <Content Include="Views\AziendaConsulente\Infortuni.cshtml" />
     <Content Include="Views\AziendaConsulente\DettaglioInfortuni.cshtml" />
+    <Content Include="Views\Iscritto\CartaEnpaia.cshtml" />
+    <Content Include="Views\Iscritto\Assegni.cshtml" />
+    <Content Include="Views\Iscritto\RecuperaPassword.cshtml" />
+    <Content Include="Views\Iscritto\RigenerazionePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

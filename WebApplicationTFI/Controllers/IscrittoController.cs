@@ -245,5 +245,25 @@ namespace WebApplicationTFI.Controllers
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
+        public ActionResult CartaEnpaia()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult Assegni()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult RecuperaPassword()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult RigenerazionePassword()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
     }
 }
