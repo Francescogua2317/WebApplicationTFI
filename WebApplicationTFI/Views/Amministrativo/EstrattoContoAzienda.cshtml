@@ -1,12 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "EstrattoConto";
-    Layout = "~/Views/Shared/_IscrittoLayout.cshtml";
+    ViewBag.Title = "EstrattoContoAzienda";
+    Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
 }
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
 
@@ -18,62 +14,35 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header" style="background: #0c773c;text-align: center;width: 100%;color: white;font-size: 25px">
-                        Dati Matricola
+                        Dati Azienda
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-2">
                                 <div class="form-group">
-                                    <label>Matricola</label>
-                                    <input type="text" class="form-control" value="0123456" disabled>
+                                    <label>Posizione Azienda</label>
+                                    <input type="text" class="form-control" value="243" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
-                                    <label>Nominativo</label>
-                                    <input type="text" class="form-control" value="Mario Rossi" disabled>
+                                    <label>Ragione Sociale</label>
+                                    <input type="text" class="form-control" value="Azienda Vinicola" disabled>
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label>Codice Fiscale</label>
-                                    <input type="text" class="form-control" value="NSTNCL58R23H3401" disabled>
+                                    <input type="text" class="form-control" value="NSTMRC94T20H501G" disabled>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label>Comune</label>
-                                    <input type="text" class="form-control" value="Roma" disabled>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <label>Indirizzo</label>
-                                    <input type="text" class="form-control" value="Via Milano 1" disabled>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label>CAP</label>
-
-                                    <input type="text" class="form-control datetimepicker-input" value="00132" disabled>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label>Provincia</label>
-                                    <input type="text" class="form-control" value="RM" disabled>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
 </section>
 <!-- Main content -->
 <section class="content">
@@ -85,9 +54,8 @@
                         <table id="example2" class="table table-bordered table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th style="background:#0c773c;color:white;width:33%;text-align:center">Anno</th>
-                                    <th style="background:#0c773c;color:white;width:33%;text-align:center">Estratto Conto TFR</th>
-                                    <th style="background:#0c773c;color:white;width:33%;text-align:center">Estratto Conto Fondo</th>
+                                    <th style="background:#0c773c;color:white;width:50%;text-align:center">Anno</th>
+                                    <th style="background:#0c773c;color:white;width:50%;text-align:center">Estratto Conto Fondo</th>
 
                                 </tr>
                             </thead>
@@ -97,81 +65,63 @@
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2019</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                    
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                    
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                  
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;vertical-align:middle">2018</td>
                                     <td>
                                         <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
                                     </td>
-                                    <td>
-                                        <center><img src="~/Images/imgPDFr.jpg" height="32" width="32" /></center>
-                                    </td>
+                                   
                                 </tr>
                             </tbody>
                         </table>

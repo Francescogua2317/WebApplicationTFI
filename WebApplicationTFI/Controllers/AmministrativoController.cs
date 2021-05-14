@@ -26,6 +26,12 @@ namespace WebApplicationTFI.Controllers
 
             return View();
         }
+        public ActionResult ScadenzarioFondo()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+
+            return View();
+        }
 
 
         public ActionResult Liquidazione()
@@ -54,6 +60,21 @@ namespace WebApplicationTFI.Controllers
             return View();
         }
         public ActionResult Anagrafica() 
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult EstrattoContoAzienda()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult ListaIscritti()
+        {
+            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            return View();
+        }
+        public ActionResult ListaAziende()
         {
             if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();

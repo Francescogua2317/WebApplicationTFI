@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "ListaUtenti";
+    ViewBag.Title = "ListaIscritti";
     Layout = "~/Views/Shared/_AmministrativoLayout.cshtml";
 }
 
@@ -30,8 +30,8 @@
 
 <div class="card" style="background-color:white">
     <div class="card-body">
-        <div class="input-group">
-            <div class="form-group" style="margin-left:380px">
+        <div class="input-group" style="margin-left:180px">
+            <div class="form-group">
                 <label>Matricola:</label>
                 <div class="input-group">
                     <input class="form-control" id="searchMat" placeholder="Ricerca per matricola..." autocomplete="off" autofocus>
@@ -43,7 +43,18 @@
                     <input class="form-control" id="search" placeholder="Ricerca per nominativo..." autocomplete="off" autofocus>
                 </div>
             </div>
-
+            <div class="form-group">
+                <label>Posizione azienda:</label>
+                <div class="input-group">
+                    <input class="form-control" id="searchPos" placeholder="Ricerca per posizione..." autocomplete="off" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nome azienda:</label>
+                <div class="input-group">
+                    <input class="form-control" id="searchAzi" placeholder="Ricerca per nome azienda..." autocomplete="off" autofocus>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -60,10 +71,8 @@
                     <th>Nominativo</th>
                     <th>Codice Fiscale</th>
                     <th>Data Nascita</th>
-                    <th>Sesso</th>
-                    <th>Comune</th>
-                    <th>Provincia</th>
-                    <th>Stato Estero</th>
+                    <th>Posizione azienda</th>
+                    <th>Nome azienda</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -75,60 +84,56 @@
                     <td>Marco Nisticò</td>
                     <td>RSSMRA71E05H501Q</td>
                     <td>03/05/2000</td>
-                    <td>M</td>
-                    <td>Roma</td>
-                    <td>RM</td>
-                    <td>Italia</td>
+                    <td>23</td>
+                    <td>Beni alimentari</td>
+
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
                     <td>1235</td>
-                    <td>Davide Lizzeri</td>
+                    <td>Marco Verdi</td>
                     <td>RSSMRA71E05H501Q</td>
                     <td>03/05/2000</td>
-                    <td>M</td>
-                    <td>Roma</td>
-                    <td>RM</td>
-                    <td>Italia</td>
+                    <td>26</td>
+                    <td>Azienda agricola</td>
 
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+
                 </tr>
                 <tr>
                     <td>1236</td>
-                    <td>Francesco Guarracino</td>
+                    <td>Mario Rossi</td>
                     <td>RSSMRA71E05H501Q</td>
                     <td>03/05/2000</td>
-                    <td>M</td>
-                    <td>Roma</td>
-                    <td>RM</td>
-                    <td>Italia</td>
-
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
-                    <td><a type="button" class=" btn  btn-outline-secondary " href='' /> E/C Fondo</td>
-
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
-                </tr>
-                <tr>
-                    <td>1237</td>
-                    <td>Lanfranco Romei</td>
-                    <td>RSSMRA71E05H501Q</td>
-                    <td>03/05/2000</td>
-                    <td>M</td>
-                    <td>Roma</td>
-                    <td>RM</td>
-                    <td>Italia</td>
+                    <td>27</td>
+                    <td>Società agricola</td>
 
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
                     <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+
+                </tr>
+                <tr>
+                    <td>1237</td>
+                    <td>Giuseppe Verdi</td>
+                    <td>RSSMRA71E05H501Q</td>
+                    <td>03/05/2000</td>
+                    <td>28</td>
+                    <td>Società Vinicola</td>
+
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
+
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+
                 </tr>
             </tbody>
         </table>
@@ -143,7 +148,12 @@
         $('#searchMat').on('input', function () {
             searchRow();
         });
-
+        $('#searchPos').on('input', function () {
+            searchRow();
+        });
+        $('#searchAzi').on('input', function () {
+            searchRow();
+        });
 
     })
     function searchRow() {
@@ -151,14 +161,18 @@
         var val1 = $.trim($('#search').val()).replace(' ').toLowerCase();
 
         var val2 = $.trim($('#searchMat').val()).replace(' ').toLowerCase();
+        var val3 = $.trim($('#searchPos').val()).replace(' ').toLowerCase();
+        var val4 = $.trim($('#searchAzi').val()).replace(' ').toLowerCase();
 
 
 
         $rows.show().filter(function () {
             var text1 = $(this).find('td:nth-child(2)').text().replace(' ').toLowerCase();
             var text2 = $(this).find('td:nth-child(1)').text().replace(' ').toLowerCase();
+            var text3 = $(this).find('td:nth-child(5)').text().replace(' ').toLowerCase();
+            var text4 = $(this).find('td:nth-child(6)').text().replace(' ').toLowerCase();
 
-            return !~text1.indexOf(val1) || !~text2.indexOf(val2);
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2) || !~text3.indexOf(val3) || !~text4.indexOf(val4);
         }).hide();
     }
 

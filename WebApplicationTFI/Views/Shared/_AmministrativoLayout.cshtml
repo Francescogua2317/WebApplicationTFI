@@ -201,8 +201,52 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item">
 
+                            <a href='@Url.Action("ListaUtenti", "Amministrativo")' class="nav-link primary">
+
+                                <i class="nav-icon fas fa-id-card"></i>
+                                <p>ANAGRAFICA ISCRITTO</p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='#' class="nav-link primary">
+
+                                <i class="nav-icon fas fa-id-badge"></i>
+                                <p>ANAGRAFICA AZIENDA</p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='#' class="nav-link primary">
+
+                                <i class="nav-icon fas fa-file-excel"></i>
+                                <p>CESSAZIONI</p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='#' class="nav-link primary">
+
+                                <i class="nav-icon fas fa-euro-sign"></i>
+                                <p>CONTRIBUTI</p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a href='#' class="nav-link primary">
+
+                                <i class="nav-icon fas fa-wallet"></i>
+                                <p>RISCOSSIONI</p>
+                            </a>
+
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-file-contract nav-icon"></i>
@@ -410,29 +454,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-credit-card"></i>
-                                <p>
-                                    ESTRATTI CONTO
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="fas fa-city nav-icon"></i>
-                                        <p>Azienda</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="fas fa-user-edit nav-icon"></i>
-                                        <p>Iscritto</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-ambulance"></i>
@@ -480,11 +502,34 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-credit-card"></i>
+                                <p>
+                                    ESTRATTI CONTO
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("ListaAziende", "Amministrativo")" class="nav-link">
+                                        <i class="fas fa-city nav-icon"></i>
+                                        <p>Azienda</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("ListaIscritti", "Amministrativo")" class="nav-link">
+                                        <i class="fas fa-user-edit nav-icon"></i>
+                                        <p>Iscritto</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
 
-                            <a href='@Url.Action("ListaUtenti", "Amministrativo")' class="nav-link primary">
+                            <a href='#' class="nav-link primary">
 
-                                <i class="nav-icon fas fa-id-badge"></i>
-                                <p>ANAGRAFICA ISCRITTI</p>
+                                <i class="nav-icon fas fa-key"></i>
+                                <p>MODIFICA PASSWORD</p>
                             </a>
 
                         </li>
@@ -496,7 +541,8 @@
 
                             </a>
                         </li>
-                </nav>
+                    </ul>
+</nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

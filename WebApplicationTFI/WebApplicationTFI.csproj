@@ -2263,6 +2263,10 @@
     <Content Include="Views\Iscritto\Assegni.cshtml" />
     <Content Include="Views\Iscritto\RecuperaPassword.cshtml" />
     <Content Include="Views\Iscritto\RigenerazionePassword.cshtml" />
+    <Content Include="Views\Amministrativo\ScadenzarioFondo.cshtml" />
+    <Content Include="Views\Amministrativo\EstrattoContoAzienda.cshtml" />
+    <Content Include="Views\Amministrativo\ListaIscritti.cshtml" />
+    <Content Include="Views\Amministrativo\ListaAziende.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

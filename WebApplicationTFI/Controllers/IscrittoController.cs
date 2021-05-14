@@ -130,13 +130,13 @@ namespace WebApplicationTFI.Controllers
             //string nome = objAnagrafica.Tables[0].Rows[0]["NOME"].ToString();
             //string cognome = objAnagrafica.Tables[0].Rows[0]["COGNOME"].ToString();
             //string codiceFiscale = objAnagrafica.Tables[0].Rows[0]["CODFIS"].ToString();
-           
+
             //string indirizzo = objAnagrafica.Tables[0].Rows[0]["IND"].ToString();
             //string numeroCivico = objAnagrafica.Tables[0].Rows[0]["NUMCIV"].ToString();
             //string cap = objAnagrafica.Tables[0].Rows[0]["CAP"].ToString();
             //string comune = objAnagrafica.Tables[0].Rows[0]["DENLOC"].ToString();
             //string sigpro2 = objAnagrafica.Tables[0].Rows[0]["SIGPRO"].ToString();
-          
+
 
 
 
@@ -151,11 +151,18 @@ namespace WebApplicationTFI.Controllers
             //    ViewData["Cap"] = cap;
             //    ViewData["Comune2"] = comune;
             //    ViewData["Provincia2"] = sigpro2;
-             
+
             //}
 
 
-            return View();
+            if (Session["layout"].ToString() == "~/Views/Shared/_AmministrativoLayout.cshtml")
+            {
+                return View("~/Views/Iscritto/EstrattoConto.cshtml", "~/Views/Shared/_AmministrativoLayout.cshtml");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult Contact()
