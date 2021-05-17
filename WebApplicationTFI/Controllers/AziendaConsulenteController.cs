@@ -6,27 +6,23 @@ using System.Web.Mvc;
 
 namespace WebApplicationTFI.Controllers
 {
-    public class AziendaConsulenteController : Controller
+    public class AziendaConsulenteController : BaseController
     {
         // GET: Azienda
         public ActionResult Index()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View("~/Views/Home/Index.cshtml");
         }
         public ActionResult EstrattoContoAzienda()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
         public ActionResult Infortuni()
-        {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+        {            
             return View();
         }
         public ActionResult DettaglioInfortuni()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
     }

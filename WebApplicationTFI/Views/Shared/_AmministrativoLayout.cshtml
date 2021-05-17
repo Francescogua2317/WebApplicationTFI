@@ -203,22 +203,16 @@
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-
-                            <a href='@Url.Action("ListaUtenti", "Amministrativo")' class="nav-link primary">
-
+                            <a href='@Url.Action("ListaIscritti", "Amministrativo", new { src="ana"})' class="nav-link primary">
                                 <i class="nav-icon fas fa-id-card"></i>
                                 <p>ANAGRAFICA ISCRITTO</p>
                             </a>
-
                         </li>
                         <li class="nav-item">
-
-                            <a href='#' class="nav-link primary">
-
+                            <a href='@Url.Action("ListaAziende", "Amministrativo", new { src="AnagraficaAzienda"})' class="nav-link primary">
                                 <i class="nav-icon fas fa-id-badge"></i>
                                 <p>ANAGRAFICA AZIENDA</p>
                             </a>
-
                         </li>
                         <li class="nav-item">
 
@@ -326,30 +320,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-credit-card"></i>
-                                        <p>
-                                            Estratti conto
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-city nav-icon"></i>
-                                                <p>Azienda</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">
-                                                <i class="fas fa-user-edit nav-icon"></i>
-                                                <p>Iscritto</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
                                     <a title="Liquidazione VIRTUALE (senza requisiti)" href="" class="nav-link">
                                         <i class="fas fa-coins nav-icon"></i>
                                         <p>Simulazione</p>
@@ -389,7 +359,6 @@
                                         </p>
                                     </a>
                                     <ul class="nav nav-treeview">
-
                                         <li class="nav-item">
                                             <a href="" class="nav-link">
                                                 <i class="fas fa-id-card-alt nav-icon"></i>
@@ -502,22 +471,22 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a title="ESTRATTI CONTO TFR/FP" href="#" class="nav-link">
                                 <i class="nav-icon fas fa-credit-card"></i>
                                 <p>
-                                    ESTRATTI CONTO
+                                    ESTRATTI CONTO TFR/FP
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="@Url.Action("ListaAziende", "Amministrativo")" class="nav-link">
+                                    <a href="@Url.Action("ListaAziende", "Amministrativo", new { src="EstrattoContoAzienda"})" class="nav-link">
                                         <i class="fas fa-city nav-icon"></i>
                                         <p>Azienda</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="@Url.Action("ListaIscritti", "Amministrativo")" class="nav-link">
+                                    <a href="@Url.Action("ListaIscritti", "Amministrativo", new { src="ec"})" class="nav-link">
                                         <i class="fas fa-user-edit nav-icon"></i>
                                         <p>Iscritto</p>
                                     </a>

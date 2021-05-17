@@ -236,6 +236,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AmministrativoController.cs" />
     <Compile Include="Controllers\AziendaConsulenteController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IscrittoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -2267,6 +2268,7 @@
     <Content Include="Views\Amministrativo\EstrattoContoAzienda.cshtml" />
     <Content Include="Views\Amministrativo\ListaIscritti.cshtml" />
     <Content Include="Views\Amministrativo\ListaAziende.cshtml" />
+    <Content Include="Views\Amministrativo\AnagraficaAzienda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

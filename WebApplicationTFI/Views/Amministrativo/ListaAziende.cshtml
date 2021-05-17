@@ -43,6 +43,10 @@
                     <input class="form-control" id="searchAzi" placeholder="Ricerca per nome azienda..." autocomplete="off" autofocus>
                 </div>
             </div>
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="button" class="btn btn-block btn-outline-success">Cerca</button>
+            </div>
         </div>
     </div>
 </div>
@@ -67,7 +71,7 @@
                     <td>Beni agroalimentari</td>
                     <td>RSSMRA71E05H501Q</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoContoAzienda", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action(ViewBag.src, "Amministrativo")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -75,7 +79,7 @@
                     <td>Verdure e frutta</td>
                     <td>RSSMRA71E05H501Q</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoContoAzienda", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action(ViewBag.src, "Amministrativo")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -83,7 +87,7 @@
                     <td>Beni fruttiferi</td>
                     <td>RSSMRA71E05H501Q</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoContoAzienda", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action(ViewBag.src, "Amministrativo")' /> Dettaglio</td>
 
                 </tr>
                 <tr>
@@ -91,7 +95,7 @@
                     <td>Azienda vinicola</td>
                     <td>RSSMRA71E05H501Q</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoContoAzienda", "Amministrativo")' /> Dettaglio</td>
+                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action(ViewBag.src, "Amministrativo")' /> Dettaglio</td>
 
                 </tr>
             </tbody>

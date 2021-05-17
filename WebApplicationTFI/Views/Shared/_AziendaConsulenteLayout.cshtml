@@ -181,10 +181,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #0c773c">
             <!-- Brand Logo -->
-
             <center style="background:whitesmoke"> <img style="max-width:100%;height:auto" src="~/Images/Logo-Fondazione-Enpaia.jpg" alt="Enpaia"></center>
-
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -196,14 +193,11 @@
                         <a href="#" name="Utente" title="@ViewBag.NomeUtente" class="d-block">@ViewBag.NomeUtente</a>
                     </div>
                 </div>
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="@Url.Action("EstrattoContoAzienda", "AziendaConsulente")" class="nav-link">
@@ -218,11 +212,66 @@
                             </a>
                         </li>
                         <li class="nav-item">
-
+                            <a href='#' class="nav-link primary">
+                                <i class="fas fa-file-contract nav-icon"></i>
+                                <p>CONTRIBUTI</p>
+                                <i class="fas fa-angle-left right"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-paste nav-icon"></i>
+                                        <p>Dati Azienda</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-file-invoice-dollar nav-icon"></i>
+                                        <p>Rapporti di Lavoro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <p>Denunce mensili</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-money-check-alt nav-icon"></i>
+                                        <p>Denunce arretrati</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-money-check-alt nav-icon"></i>
+                                        <p>Cessazione RDL</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a title="" href="" class="nav-link">
+                                        <i class="fas fa-coins nav-icon"></i>
+                                        <p>Dati TFR/PREV</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-calendar-minus nav-icon"></i>
+                                        <p>E/C TFR</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-calendar-minus nav-icon"></i>
+                                        <p>Modulistica</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
                             <a href='@Url.Action("Index", "Login")' class="nav-link primary">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>LOGOUT</p>
-
                             </a>
                         </li>
                     </ul>

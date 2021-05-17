@@ -20,9 +20,7 @@ namespace WebApplicationTFI.Controllers
         // GET: Login
         public ActionResult Index()
         {
-
             return View();
-
         }
         [HttpPost]
         public ActionResult Index(Utente u)

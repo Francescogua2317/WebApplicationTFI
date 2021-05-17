@@ -55,13 +55,17 @@
                     <input class="form-control" id="searchAzi" placeholder="Ricerca per nome azienda..." autocomplete="off" autofocus>
                 </div>
             </div>
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="button" class="btn btn-block btn-outline-success">Cerca</button>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="card card-default">
     <div style="background-color: #0c773c" class="card-header">
-        <h2 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Lista Utenti</h2>
+        <h2 style="color:white;text-align:center;width:100%;font-size:25px" class="card-title">Lista Iscritti</h2>
     </div>
     <div class="card-body">
         <table id="table" class="table table-bordered table-hover table-striped">
@@ -70,11 +74,15 @@
                     <th>Matricola</th>
                     <th>Nominativo</th>
                     <th>Codice Fiscale</th>
-                    <th>Data Nascita</th>
                     <th>Posizione azienda</th>
                     <th>Nome azienda</th>
-                    <th></th>
-                    <th></th>
+                    @{
+                        if (ViewBag.src == "ec")
+                        {
+                            <th></th>
+                            <th></th>
+                        }
+                    }
                     <th></th>
                 </tr>
             </thead>
@@ -83,57 +91,85 @@
                     <td>1234</td>
                     <td>Marco Nisticò</td>
                     <td>RSSMRA71E05H501Q</td>
-                    <td>03/05/2000</td>
                     <td>23</td>
                     <td>Beni alimentari</td>
+                    @{
+                        if (ViewBag.src == "ec")
+                        {
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TFR</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
 
+                        }
+                        else
+                        {
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                        }
+                    }
                 </tr>
                 <tr>
                     <td>1235</td>
                     <td>Marco Verdi</td>
                     <td>RSSMRA71E05H501Q</td>
-                    <td>03/05/2000</td>
                     <td>26</td>
                     <td>Azienda agricola</td>
+                    @{
+                        if (ViewBag.src == "ec")
+                        {
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TFR</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
-
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+                        }
+                        else
+                        {
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                        }
+                    }
                 </tr>
                 <tr>
                     <td>1236</td>
                     <td>Mario Rossi</td>
                     <td>RSSMRA71E05H501Q</td>
-                    <td>03/05/2000</td>
                     <td>27</td>
                     <td>Società agricola</td>
+                    @{
+                        if (ViewBag.src == "ec")
+                        {
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TFR</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
-
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+                        }
+                        else
+                        {
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                        }
+                    }
                 </tr>
                 <tr>
                     <td>1237</td>
                     <td>Giuseppe Verdi</td>
                     <td>RSSMRA71E05H501Q</td>
-                    <td>03/05/2000</td>
                     <td>28</td>
                     <td>Società Vinicola</td>
+                    @{
+                        if (ViewBag.src == "ec")
+                        {
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TFR</td>
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
 
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C TRF</td>
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='' /> E/C Fondo</td>
-
-                    <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
-
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("EstrattoConto", "Iscritto")' /> Dettaglio</td>
+                        }
+                        else
+                        {
+                            <td><a type="button" class=" btn  btn-outline-secondary" href='@Url.Action("Anagrafica", "Iscritto")' /> Dettaglio</td>
+                        }
+                    }
                 </tr>
             </tbody>
         </table>

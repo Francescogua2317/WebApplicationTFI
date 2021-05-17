@@ -1,8 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-
-    if (Session["layout"].ToString() == "~/Views/Shared/_AmministrativoLayout.cshtml")
+    if (Session["layout"] != null)
     {
+        if (Session["layout"].ToString() == "~/Views/Shared/_AmministrativoLayout.cshtml")
+        {
 
         <!-- Main content -->
         <section class="content">
@@ -290,8 +291,9 @@
 
             })
         </script>
+            }
+        }
     }
-}
 
 
 

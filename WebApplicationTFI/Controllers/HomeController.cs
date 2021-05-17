@@ -6,11 +6,10 @@ using System.Web.Mvc;
 
 namespace WebApplicationTFI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View();
         }
     }

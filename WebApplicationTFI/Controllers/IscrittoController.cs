@@ -11,17 +11,15 @@ using WebApplicationTFI.Utilities;
 
 namespace WebApplicationTFI.Controllers
 { 
-    public class IscrittoController : Controller
+    public class IscrittoController : BaseController
     {
         // GET: Iscritto
         public ActionResult Index()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             return View("~/Views/Home/Index.cshtml");
         }
         public ActionResult Anagrafica()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
             //string codfis = Session["CodiceFiscale"].ToString();
             //DataLayer objDataAccess = new DataLayer();
             //string strSQL = "SELECT C.SIGPRO, C.DENCOM, C.CODCOM FROM CODLOC_APP C, ISCTWEB I WHERE I.CODCOMNAS=C.CODCOM AND I.CODFIS='"+codfis+"'";
@@ -112,7 +110,6 @@ namespace WebApplicationTFI.Controllers
         }
         public ActionResult EstrattoConto()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
 
             //string codfis = Session["CodiceFiscale"].ToString();
             //DataLayer objDataAccess = new DataLayer();
@@ -167,23 +164,23 @@ namespace WebApplicationTFI.Controllers
 
         public ActionResult Contact()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult Convenzioni()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult CertificazioniUniche()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
           
         }
         public ActionResult ProspettiPagamento()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
             //string codfis = Session["CodiceFiscale"].ToString();
             //DataLayer objDataAccess = new DataLayer();
@@ -223,53 +220,53 @@ namespace WebApplicationTFI.Controllers
 
         public ActionResult Privacy()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult RichiestaContoIndividuale()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult RichiestaTFR()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult AnticipazioneTFR()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
 
         public ActionResult Infortuni()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult DettaglioInfortuni()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult CartaEnpaia()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult Assegni()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult RecuperaPassword()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
         public ActionResult RigenerazionePassword()
         {
-            if (Session["NomeUtente"] != null) ViewBag.NomeUtente = Session["NomeUtente"].ToString();
+            
             return View();
         }
     }
