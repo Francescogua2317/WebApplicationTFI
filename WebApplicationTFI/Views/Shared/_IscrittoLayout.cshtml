@@ -201,7 +201,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="@Url.Action("Anagrafica", "Iscritto")" class="nav-link">
                                 <i class="nav-icon fas fa-id-badge"></i>
@@ -275,27 +275,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href='@Url.Action("Infortuni", "Iscritto")' class="nav-link ">
+                                <i class="nav-icon fas fa-ambulance"></i>
+                                <p>INFORTUNI</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href='@Url.Action("Privacy", "Iscritto")' class="nav-link">
                                 <i class="nav-icon fas fa-lock"></i>
                                 <p>Privacy</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href='@Url.Action("RecuperaPassword", "Iscritto")' class="nav-link">
-                                <i class="nav-icon fas fa-key"></i>
-                                <p>Recupera password</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href='@Url.Action("RigenerazionePassword", "Iscritto")' class="nav-link">
+                            <a href='#' class="nav-link">
                                 <i class="nav-icon fas fa-unlock-alt"></i>
-                                <p>Rigenerazione password</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href='@Url.Action("Infortuni", "Iscritto")' class="nav-link ">
-                                <i class="nav-icon fas fa-ambulance"></i>
-                                <p>INFORTUNI</p>
+                                <p>Modifica password</p>
                             </a>
                         </li>
                         <li class="nav-item">
