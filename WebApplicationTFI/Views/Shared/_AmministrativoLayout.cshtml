@@ -203,59 +203,57 @@
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href='@Url.Action("ListaIscritti", "Amministrativo", new { src="ana"})' class="nav-link primary">
+                            <a href='#' class="nav-link">
                                 <i class="nav-icon fas fa-id-card"></i>
-                                <p>ANAGRAFICA ISCRITTO</p>
+                                <p>ISCRITTO<i class="fas fa-angle-left right"></i></p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href='@Url.Action("ListaIscritti", "Amministrativo", new { src="ana"})' class="nav-link primary">
+                                        <i class="nav-icon fas fa-id-card"></i>
+                                        <p>ANAGRAFICA</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href='@Url.Action("ListaAziende", "Amministrativo", new { src="AnagraficaAzienda"})' class="nav-link primary">
-                                <i class="nav-icon fas fa-id-badge"></i>
-                                <p>ANAGRAFICA AZIENDA</p>
+                            <a href='#' class="nav-link">
+                                <i class="nav-icon fas fa-id-card"></i>
+                                <p>AZIENDA<i class="fas fa-angle-left right"></i></p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href='@Url.Action("ListaAziende", "Amministrativo", new { src="AnagraficaAzienda"})' class="nav-link primary">
+                                        <i class="nav-icon fas fa-id-badge"></i><p>ANAGRAFICA</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-
                             <a href='#' class="nav-link primary">
-
-                                <i class="nav-icon fas fa-file-excel"></i>
-                                <p>CESSAZIONI</p>
+                                <i class="nav-icon fas fa-file-excel"></i><p>CESSAZIONI</p>
                             </a>
-
                         </li>
                         <li class="nav-item">
-
                             <a href='#' class="nav-link primary">
-
-                                <i class="nav-icon fas fa-euro-sign"></i>
-                                <p>CONTRIBUTI</p>
+                                <i class="nav-icon fas fa-euro-sign"></i><p>CONTRIBUTI</p>
                             </a>
-
                         </li>
                         <li class="nav-item">
-
                             <a href='#' class="nav-link primary">
-
-                                <i class="nav-icon fas fa-wallet"></i>
-                                <p>RISCOSSIONI</p>
+                                <i class="nav-icon fas fa-wallet"></i><p>RISCOSSIONI</p>
                             </a>
-
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-file-contract nav-icon"></i>
-                                <p>
-                                    TFR
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
+                                <p>TFR<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="@Url.Action("Scadenzario", "Amministrativo")" class="nav-link">
                                         <i class="nav-icon fas fa-calendar-times"></i>
-                                        <p>
-                                            Scadenzario
-                                        </p>
+                                        <p>Scadenzario</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
