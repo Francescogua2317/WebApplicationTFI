@@ -8,8 +8,8 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
+                <div id="rowTFR" class="row" style="display:none">
+                    <div class="col-md-4">
 
                         <!-- /.card -->
                         <!-- PIE CHART -->
@@ -31,11 +31,12 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
-                        <!-- PIE CHART -->
+                    </div>
+                    <div class="col-md-4">
+                        <!-- DONUT CHART -->
                         <div class="card card-danger">
                             <div class="card-header" style="background:#0c773c">
-                                <h3 class="card-title">Fondo</h3>
+                                <h3 class="card-title">Tipologie Liquidati TFR</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -47,11 +48,13 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <canvas id="pieChartFondo" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas id="donutChartTFR" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                             <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
+                    </div>
+
+                    <div class="col-md-4">
                         <!-- PIE CHART -->
                         <div class="card card-danger">
                             <div class="card-header" style="background:#0c773c">
@@ -72,16 +75,15 @@
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
-
-
                     </div>
-                    <!-- /.col (LEFT) -->
-
+                </div>
+                <!-- /.card -->
+                <div id="rowFondo" class="row" style="display:none">
                     <div class="col-md-6">
-                        <!-- DONUT CHART -->
+                        <!-- PIE CHART -->
                         <div class="card card-danger">
                             <div class="card-header" style="background:#0c773c">
-                                <h3 class="card-title">Tipologie Liquidati TFR</h3>
+                                <h3 class="card-title">Fondo</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -93,10 +95,18 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <canvas id="donutChartTFR" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas id="pieChartFondo" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                             <!-- /.card-body -->
                         </div>
+                        <!-- /.card -->
+
+
+
+                    </div>
+                    <!-- /.col (LEFT) -->
+
+                    <div class="col-md-6">
                         <!-- /.card -->
                         <!-- DONUT CHART -->
                         <div class="card card-danger">
@@ -124,6 +134,75 @@
                     <!-- /.col (RIGHT) -->
                 </div>
                 <!-- /.row -->
+                <div id="rowInfortuni" class="row" style="display:none">
+                    <div class="col-md-4">
+
+                        <!-- /.card -->
+                        <!-- PIE CHART -->
+                        <div class="card card-danger">
+                            <div class="card-header" style="background:#0c773c">
+                                <h3 class="card-title">Tipologia infortuni</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="pieChartInfortuni" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- DONUT CHART -->
+                        <div class="card card-danger">
+                            <div class="card-header" style="background:#0c773c">
+                                <h3 class="card-title">Infortuni</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="pieChartStatistiche" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- PIE CHART -->
+                        <div class="card card-danger">
+                            <div class="card-header" style="background:#0c773c">
+                                <h3 class="card-title">Riepilogo importi liquidati</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="pieChartTipologie" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
             </div><!-- /.container-fluid -->
         </section>
 
@@ -235,6 +314,49 @@
                         }
                     ]
                 }
+                var pieData4 = {
+                    labels: [
+                        'Lavorativi',
+                        'Extra lavorativi',
+                        'In itinere',
+
+                    ],
+                    datasets: [
+                        {
+                            data: [3, 4,5 ],
+                            backgroundColor: ['aqua', 'black','pink'],
+                        }
+                    ]
+                }
+                var pieData5 = {
+                    labels: [
+                        'FKT',
+                        'Protesi',
+                        'Ricovero',
+                        'Giornaliere',
+                        'Permanente',
+
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 400, 500,600,700],
+                            backgroundColor: ['#f39c12', 'grey', 'lightgreen','yellow','purple'],
+                        }
+                    ]
+                }
+                var pieData6 = {
+                    labels: [
+                        'Infortuni aperti',
+                        'Infortuni liquidati',
+
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 400,],
+                            backgroundColor: ['red', 'blue'],
+                        }
+                    ]
+                }
                 //-------------
                 //- PIE CHART -
                 //-------------
@@ -267,7 +389,7 @@
                 // You can switch between pie and douhnut using the method below.
                 new Chart(pieChartCanvas, {
                     type: 'pie',
-                    data: pieData,
+                    data: pieData2,
                     options: pieOptions
                 })
 
@@ -285,11 +407,85 @@
                 // You can switch between pie and douhnut using the method below.
                 new Chart(pieChartCanvas, {
                     type: 'pie',
-                    data: pieData,
+                    data: pieData3,
                     options: pieOptions
                 })
 
+                //-------------
+                //- PIE CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var pieChartCanvas = $('#pieChartInfortuni').get(0).getContext('2d')
+                var pieData = pieData4;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData4,
+                    options: pieOptions
+                })
+
+                //-------------
+                //- PIE CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var pieChartCanvas = $('#pieChartTipologie').get(0).getContext('2d')
+                var pieData = pieData5;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData5,
+                    options: pieOptions
+                })
+
+                //-------------
+                //- PIE CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var pieChartCanvas = $('#pieChartStatistiche').get(0).getContext('2d')
+                var pieData = pieData6;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData6,
+                    options: pieOptions
+                })
             })
+        </script>
+        <script>
+            $("#btnMostraTFR").click(function () {
+                $("#rowTFR").show();
+                $("#rowFondo").hide();
+                $("#rowInfortuni").hide();
+
+            });
+
+            $("#btnMostraFondo").click(function () {
+                $("#rowTFR").hide();
+                $("#rowFondo").show();
+                $("#rowInfortuni").hide();
+
+            });
+            $("#btnMostraInfortuni").click(function () {
+                $("#rowTFR").hide();
+                $("#rowFondo").hide();
+                $("#rowInfortuni").show();
+
+            });
         </script>
             }
         }
