@@ -483,11 +483,29 @@
                     $("#rowFondo").hide();
                     $("#rowInfortuni").show();
                 }
-                else if (localStorage.getItem('id') == "btnHome") {
+                else  {
                     $("#rowTFR").hide();
                     $("#rowFondo").hide();
                     $("#rowInfortuni").hide();
                 }
+            </script>
+            <script>
+                $("#btnMostraTFR2").click(function () {
+                 
+                    $("#rowTFR").show();
+                    $("#rowFondo").hide();
+                    $("#rowInfortuni").hide();
+                });
+                $("#btnMostraFondo2").click(function () {
+                    $("#rowTFR").hide();
+                    $("#rowFondo").show();
+                    $("#rowInfortuni").hide();
+                });
+                $("#btnMostraInfortuni2").click(function () {
+                    $("#rowTFR").hide();
+                    $("#rowFondo").hide();
+                    $("#rowInfortuni").show();
+                });
             </script>
         }
     }
