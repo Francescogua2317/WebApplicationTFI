@@ -6,7 +6,6 @@ namespace WebApplicationTFI.Utilities
 {
     public class Cypher
     {
-
         public static string CryptPassword(string strPassword, string strKey = "", string strIV = "")
         {
             SymmetricAlgorithm mCryptProv;
